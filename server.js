@@ -8,6 +8,8 @@ const pool = new Pool({
   ssl: process.env.NODE_ENV === 'production' // Enable SSL for production
 });
 
+console.log("Logging in the server!!!")
+
 // Middleware to parse JSON request bodies
 app.use(express.json());
 

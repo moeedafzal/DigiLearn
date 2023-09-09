@@ -16,6 +16,7 @@ router.get("/modules", async (req, res) => {
     if (!moduleName) {
       throw new Error("Module name is required");
     }
+    console.log("Module name: ", moduleName)
 
     const query = `SELECT * FROM modules WHERE modules.name = '${moduleName}'`;
 
