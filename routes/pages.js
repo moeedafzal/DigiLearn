@@ -1,44 +1,40 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { Pool } = require('pg'); // PostgreSQL client
+
+require("dotenv").config();
+
+const { Pool } = require("pg");
+
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // Database connection URL
-  ssl: process.env.NODE_ENV === 'production' // Enable SSL for production
+  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 });
 
-// Route to get all pages
-router.get('/page', async (req, res) => {
+router.get("/modules", async (req, res) => {
   try {
-    res.json("Hello World")
-    // const client = await pool.connect();
-    // const result = await client.query('SELECT * FROM pages'); // Replace 'pages' with your actual table name
-    // client.release();
-    // res.json(result.rows);
-  } catch (error) {
-    console.error('Error fetching pages:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+    const moduleName = req.query.moduleName;
+    console.log("moduleName: ", moduleName);
+    if (!moduleName) {
+      throw new Error("Module name is required");
+    }
 
-// Route to get a specific page by ID
-router.get('/:pageId', async (req, res) => {
-  const pageId = req.params.pageId;
-  try {
+    const query = `SELECT * FROM modules WHERE modules.name = '${moduleName}'`;
+
     const client = await pool.connect();
-    const result = await client.query('SELECT * FROM pages WHERE id = $1', [pageId]); // Replace 'pages' with your actual table name
+    const module = await client.query(query);
     client.release();
 
-    if (result.rows.length === 0) {
-      res.status(404).json({ error: 'Page not found' });
-    } else {
-      res.json(result.rows[0]);
+    if (!module.rows.length) {
+      throw new Error("Module not found");
     }
+
+    const row = module.rows[0];
+    return res.status(200).json({ row });
   } catch (error) {
-    console.error('Error fetching page:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error("Error fetching pages:", error.message);
+    res
+      .status(500)
+      .json({ error: "Internal server error", message: error.message });
   }
 });
-
-// Add more routes for creating, updating, or deleting pages as needed
 
 module.exports = router;
