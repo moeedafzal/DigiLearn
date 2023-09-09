@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const routes = require('./routes/pages.js')
 const port = process.env.PORT || 3000; // Use the specified port or default to 3000
 const { Pool } = require('pg'); // PostgreSQL client
 const pool = new Pool({
@@ -15,7 +16,7 @@ app.use(express.static('public'));
 
 // Define your API routes (e.g., /api/modules, /api/pages)
 // app.use('/api/modules', require('./routes/modules'));
-app.use('/api/pages', require('./routes/pages'));
+app.use('/', routes);
 // app.use('/api/sections', require('./routes/sections'));
 
 // Start the server

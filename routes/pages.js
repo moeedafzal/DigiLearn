@@ -7,12 +7,13 @@ const pool = new Pool({
 });
 
 // Route to get all pages
-router.get('/', async (req, res) => {
+router.get('/page', async (req, res) => {
   try {
-    const client = await pool.connect();
-    const result = await client.query('SELECT * FROM pages'); // Replace 'pages' with your actual table name
-    client.release();
-    res.json(result.rows);
+    res.json("Hello World")
+    // const client = await pool.connect();
+    // const result = await client.query('SELECT * FROM pages'); // Replace 'pages' with your actual table name
+    // client.release();
+    // res.json(result.rows);
   } catch (error) {
     console.error('Error fetching pages:', error);
     res.status(500).json({ error: 'Internal server error' });
