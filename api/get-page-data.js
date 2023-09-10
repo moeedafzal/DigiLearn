@@ -41,17 +41,19 @@ router.get("/", async (req, res) => {
 
     allPages = allPages.sort((a, b) => a.page_number - b.page_number);
 
-    for (let i = 0; i < allPages.length; i++) {
-      if (allPages[i].id == page_id) {
-        if (i == 0) {
-          backPageId = null;
-          nextPageId = allPages[i + 1].id;
-        } else if (i == allPages.length - 1) {
-          backPageId = allPages[i - 1].id;
-          nextPageId = null;
-        } else {
-          backPageId = allPages[i - 1].id;
-          nextPageId = allPages[i + 1].id;
+    if (allPages.length > 1) {
+      for (let i = 0; i < allPages.length; i++) {
+        if (allPages[i].id == page_id) {
+          if (i == 0) {
+            backPageId = null;
+            nextPageId = allPages[i + 1].id;
+          } else if (i == allPages.length - 1) {
+            backPageId = allPages[i - 1].id;
+            nextPageId = null;
+          } else {
+            backPageId = allPages[i - 1].id;
+            nextPageId = allPages[i + 1].id;
+          }
         }
       }
     }
