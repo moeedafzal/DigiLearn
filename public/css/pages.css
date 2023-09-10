@@ -13,6 +13,37 @@ h2 {
   color: #000;
 }
 
+figure {
+  text-align: center;
+}
+
+blockquote {
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+blockquote > i {
+  font-style: italic;
+  font-family: "Roboto";
+  display: block;
+  color: #36827F;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+blockquote > cite {
+  align-self: flex-end;
+  color: #393939;
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
 section > div {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
