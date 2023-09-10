@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json();
 
+      const startLearningButton = document.getElementById("start-learning-button");
+      startLearningButton.addEventListener("click", function () {
+        window.location.href = `pages?pageId=${data.rows[0].page_id}`;
+      });
+
       const moduleCardsContainer = document.getElementById("module-cards");
 
       data.rows.forEach((module) => {
