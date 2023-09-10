@@ -63,8 +63,6 @@ router.get("/", async (req, res) => {
       back_page_id: backPageId,
     };
 
-    console.log("Page data:", data);
-
     return res.status(200).json({ data });
   } catch (error) {
     console.error("Error fetching pages:", error.message);
