@@ -3,6 +3,10 @@ body {
   font-family: "Roboto";
 }
 
+main {
+  padding-top: 50px;
+}
+
 h1 {
   margin-top: 44px;
   margin-bottom: 67px;
