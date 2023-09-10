@@ -219,9 +219,40 @@ main > section:nth-child(3) {
   margin: 6em 0;
 }
 
-main > section:nth-child(3) > p {
+main > section:nth-child(3) > h1 {
   font-size: 34px;
-  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+main > section:nth-child(3) > div > div {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0;
+  padding: 38px 54px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+main > section:nth-child(3) > div > div h2 {
+  color: #A289C0;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+main > section:nth-child(3) > div > div h3 {
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+main > section:nth-child(3) > div > div p {
+  font-size: 16px;
+  margin-bottom: 85px;
+  line-height: normal;
+}
+
+main > section:nth-child(3) > div > div button {
+  align-self: flex-end;
 }
 
 footer {
@@ -249,7 +280,6 @@ main button > span {
   margin-top: 1px;
 }
 
-/* CSS for the loading screen */
 .loading-screen {
   position: fixed;
   top: 0;
@@ -273,6 +303,10 @@ main button > span {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
