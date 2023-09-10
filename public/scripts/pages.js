@@ -1,6 +1,6 @@
 const routerQueries = window.location.href.split("?")[1];
 const pageId = routerQueries.split("&")[0];
-const isDevMode = routerQueries.includes("dev-mode=true");
+const isDevMode = routerQueries.includes("admin-mode=true");
 
 if (isDevMode) {
   const editPageButton = document.getElementById("edit-page-button");

@@ -1,5 +1,6 @@
 body {
   background: #F1E8FB;
+  font-family: "Roboto";
 }
 
 h1 {
@@ -8,6 +9,7 @@ h1 {
   color: #000;
   font-size: 34px;
   line-height: normal;
+  font-family: "Nunito";
 }
 
 h2 {
@@ -15,6 +17,7 @@ h2 {
   font-size: 24px;
   line-height: normal;
   color: #000;
+  font-family: "Nunito";
 }
 
 h3 {
@@ -22,6 +25,7 @@ h3 {
   font-size: 20px;
   line-height: normal;
   color: #000;
+  font-family: "Nunito";
 }
 
 figure {
@@ -65,9 +69,9 @@ nav > ul {
 }
 
 section > div {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  background: #fff;
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.10);;
+  border-radius: 10px;
   padding: 60px;
   font-size: 16px;
   line-height: 20px;

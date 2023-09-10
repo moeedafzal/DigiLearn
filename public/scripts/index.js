@@ -55,7 +55,7 @@ function createModuleCard(module) {
   description.textContent = module.description;
 
   const seeModuleButton = document.createElement("button");
-  seeModuleButton.innerHTML = `<span>See Module</span> <img src="/img/vector.png" />`;
+  seeModuleButton.innerHTML = `<span>See Module</span> <img src="/img/next-arrow.svg" />`;
   seeModuleButton.addEventListener("click", function () {
     window.location.href = `pages?pageId=${module.page_id}`;
   });
