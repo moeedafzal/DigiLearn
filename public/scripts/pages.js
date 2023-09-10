@@ -62,31 +62,3 @@ function createLoadingScreen() {
 
   return loadingScreen;
 }
-
-function createModuleCard(module) {
-  const card = document.createElement("div");
-
-  // Create card content
-  const name = document.createElement("h2");
-  name.textContent = module.name;
-
-  const title = document.createElement("h3");
-  title.textContent = module.title;
-
-  const description = document.createElement("p");
-  description.textContent = module.description;
-
-  const seeModuleButton = document.createElement("button");
-  seeModuleButton.innerHTML = `<span>See Module</span> <img src="/img/vector.png" />`;
-  seeModuleButton.addEventListener("click", function () {
-    window.location.href = `pages?pageId=${module.page_id}`;
-  });
-
-  // Append content to card
-  card.appendChild(name);
-  card.appendChild(title);
-  card.appendChild(description);
-  card.appendChild(seeModuleButton);
-
-  return card;
-}
