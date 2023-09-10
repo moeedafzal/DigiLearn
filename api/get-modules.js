@@ -9,7 +9,7 @@ const pool = new Pool({
   connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 });
 
-router.get("/get-modules", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
 
     const query = `SELECT * FROM modules`;
