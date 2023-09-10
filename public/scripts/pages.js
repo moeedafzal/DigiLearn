@@ -1,5 +1,11 @@
 const pageId = window.location.href.split("?")[1];
 
+document
+        .getElementById("back-to-course-button")
+        .addEventListener("click", function () {
+          window.location.href = "index.html";
+        });
+
 document.addEventListener("DOMContentLoaded", function () {
   async function getPageData() {
     try {
@@ -13,11 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const pageContent = res.data.page_content;
       if (!pageContent) return;
 
-      document
-        .getElementById("back-to-course-button")
-        .addEventListener("click", function () {
-          window.location.href = "index.html";
-        });
+      document.getElementById("page-title").innerHTML = res.data.page_title;
 
       document.getElementById("page-content").innerHTML = res.data.page_content;
       const backPageButton = document.getElementById("back-button");

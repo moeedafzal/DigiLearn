@@ -13,18 +13,24 @@ router.get("/", async (req, res) => {
   const page_id = req.query.pageId;
 
   try {
-    const page_content_query = `SELECT page_content FROM pages  WHERE pages.id = ${page_id}`;
+    const page_details_query = `SELECT page_content, modules.name, modules.title
+    FROM pages
+    JOIN modules ON modules.id = pages.module_id
+    WHERE pages.id = ${page_id}`;
     const all_pages_data_query = `SELECT all_pages.id, all_pages.page_number
     FROM pages p
     JOIN pages all_pages ON all_pages.module_id = p.module_id
     WHERE p.id = ${page_id}`;
 
     const client = await pool.connect();
-    const pageContentDataRes = await client.query(page_content_query);
+    const pageDetailsRes = await client.query(page_details_query);
     const allPagesData = await client.query(all_pages_data_query);
     client.release();
 
-    const pageContentData = pageContentDataRes.rows[0].page_content;
+    const pageContentData = pageDetailsRes.rows[0].page_content;
+    const moduleName = pageDetailsRes.rows[0].name;
+    const moduleTitle = pageDetailsRes.rows[0].title;
+    const pageTitle = `${moduleName}: ${moduleTitle}`
 
     const pageContent = pageContentData ? pageContentData.content : null;
 
@@ -52,9 +58,12 @@ router.get("/", async (req, res) => {
 
     const data = {
       page_content: pageContent,
+      page_title: pageTitle,
       next_page_id: nextPageId,
       back_page_id: backPageId,
     };
+
+    console.log("Page data:", data);
 
     return res.status(200).json({ data });
   } catch (error) {
