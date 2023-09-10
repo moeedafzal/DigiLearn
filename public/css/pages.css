@@ -1,0 +1,39 @@
+h1 {
+  margin-top: 44px;
+  margin-bottom: 67px;
+  color: #000;
+  font-size: 34px;
+  line-height: normal;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: 24px;
+  line-height: normal;
+  color: #000;
+}
+
+section > div {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 60px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #393939;
+  display: none;
+}
+
+section > div > div > section {
+  margin-bottom: 44px;
+}
+
+section > div > section {
+  display: flex;
+  justify-content: space-between;
+}
+
+section > div > section > button:nth-child(2) {
+  margin-left: auto;
+}

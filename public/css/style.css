@@ -193,6 +193,20 @@ nav button {
   background: #fff;
 }
 
+main button {
+  border-radius: 8px;
+  border: 0.5px solid rgba(115, 29, 216, 0.5);
+  background: #fff;
+  display: flex;
+  padding: 10px 13px;
+  font-size: 16px;
+  align-items: center;
+  gap: 10px;
+}
+
+main button > span {
+  margin-top: 1px;
+}
 
 footer {
   background: #787878;
@@ -233,4 +247,21 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+ol,
+ul {
+  margin: 0.6em 0.4em;
+  padding: 0;
+  line-height: 20px;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: disc; 
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside; 
 }

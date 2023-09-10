@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use("/get-modules", require("./api/get-modules.js"));
+app.use("/get-page-data", require("./api/get-page-data.js"));
 
 app.get('/pages', (req, res) => {
   res.sendFile(__dirname + '/public/pages.html');

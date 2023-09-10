@@ -6,14 +6,14 @@
     <title>DigiLearn</title>
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/pages.css" />
   </head>
   <body>
     <header>
       <nav>
         <img src="/img/logo.svg" alt="digilearn" />
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="contact.html">Contact</a></li>
           <button>Start Learning</button>
         </ul>
@@ -21,42 +21,103 @@
     </header>
     <main>
       <section>
-        <div>
-          <h1>Embark on your mobile design journey</h1>
-          <p>Unlock the world of mobile app design from strategy to success</p>
-        </div>
-        <img src="/img/header.png" alt="header" />
+        <button id="back-to-course-button">
+          <img src="/img/vector_left.png" /><span>Back to course</span>
+        </button>
+        <h1 class="module-heading">
+          Unit one: Mobile application strategy and design
+        </h1>
       </section>
       <section>
-        <h1>All you need</h1>
-        <div>
-          <div>
-            <img src="/img/pencilpaper.png" width="94px" height="94px" />
-            <p>Pencil and paper</p>
+        <div id="main">
+          <div id="page-content">
+            <!-- <section>
+              <p>There are two phases of any mobile app design.</p>
+              <ol>
+                <li>Mobile app design strategy</li>
+                <li>App design process</li>
+              </ol>
+              <p>
+                The following unit will cover both phases in detail with
+                additional resources, mobile trends, and tips.
+              </p>
+            </section>
+            <section>
+              <h2>Mobile application strategy</h2>
+              <p>
+                Understanding the overall business strategy should form the
+                basis of your mobile app design. Misalignment between company
+                strategy and the mobile strategy might be suicidal. There are
+                several benefits of creating and executing a mobile strategy
+                that’s derived from (and supports) the overall company strategy.
+              </p>
+              <ul>
+                <li>It maximizes ROI as much as 74%.</li>
+                <li>Reduces training needs.</li>
+                <li>It leads to customer satisfaction.</li>
+                <li>Decreases integration requirement and bugs.</li>
+                <li>
+                  Improvement in quality, value, productivity, employee
+                  efficiency, and customer engagement.
+                </li>
+              </ul>
+              <p>
+                In its simplest form, a successful mobile strategy is the
+                meeting point of business goals, mobile opportunities, and user
+                needs.
+              </p>
+            </section>
+            <section>
+              <p>
+                To get started here is a short checklist that will help you
+                understand the business strategy. This checklist will show you
+                the current standing of your company in terms of its strategy,
+                and where it wants to be in next five years.
+              </p>
+              <p>
+                Follow these steps to fully understand your company’s
+                objectives, current standing, competitors, and why and how
+                mobile strategy will fit in.
+              </p>
+              <ol>
+                <li>
+                  Your business’s mission statement, its competitive advantages,
+                  objectives, and where you want to see it in next 5 – 10 years.
+                </li>
+                <li>
+                  Define customer journey on the mobile. What the app will do?
+                  Will customers be allowed to buy from the app directly? Will
+                  they be able to check the status of their order?
+                </li>
+                <li>
+                  Create competitor profiles. Who are your competitors? What do
+                  they do. What are their strengths and weaknesses in terms of
+                  mobile strategy and app? Identify what they do differently,
+                  and what they offer on mobile.
+                </li>
+              </ol>
+              <p>
+                Define the strengths, weaknesses, threats, and opportunities
+                SWOT of your business. It will show all the areas of success and
+                opportunities. It takes time but it’s worth it.
+              </p>
+            </section> -->
           </div>
-          <div>
-            <img src="/img/laptop.png" width="94px" height="94px" />
-            <p>Laptop</p>
-          </div>
-          <div>
-            <img src="/img/figma.png" width="94px" height="94px" />
-            <p>Free Figma account</p>
-          </div>
-          <div>
-            <img src="/img/learn.png" width="94px" height="94px" />
-            <p>Desire to Learn</p>
-          </div>
+          <section>
+            <button id="back-button">
+              <img src="/img/vector_left.png" /><span>Back</span>
+            </button>
+            <button id="next-button">
+              <span>Next</span><img src="/img/vector.png" />
+            </button>
+          </section>
         </div>
-      </section>
-
-      <section>
-        <h1>What you'll learn</h1>
-        <div id="module-cards"></div>
       </section>
     </main>
 
     <footer>
       <p>© digilearn.pro</p>
     </footer>
+    <script src="./scripts/pages.js"></script>
   </body>
 </html>
