@@ -147,7 +147,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 52px;
+  font-family: "Nunito";
 }
+
+nav > ul > button {
+  font-family: "Nunito";
+}
+
 
 main {
   padding: 6em 14em;
