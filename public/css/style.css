@@ -156,7 +156,14 @@ main {
 
 button {
   cursor: pointer;
-  
+}
+
+button:hover {
+  background: #F1E8FB;
+}
+
+button:active {
+  background: #E1D5EF;
 }
 
 button > span {
@@ -201,7 +208,7 @@ nav button {
 
 main button {
   border-radius: 8px;
-  border: 0.5px solid rgba(115, 29, 216, 0.5);
+  border: 0.5px solid #B98EEB;
   background: #fff;
   display: flex;
   padding: 10px 13px;
