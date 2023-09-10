@@ -178,7 +178,7 @@ nav button {
 }
 
 main {
-  padding: 6em 20em;
+  padding: 6em 14em;
   flex-grow: 1;
 }
 
@@ -186,7 +186,20 @@ main > section:nth-child(1) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 80px;
+}
+
+main > section:nth-child(1) > div > h1 {
+  font-size: 34px;
+  margin-bottom: 22px;
+  font-weight: 700;
+}
+
+main > section:nth-child(1) > div > p {
+  font-size: 18px;
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
 }
 
 main > section:nth-child(2) {
@@ -198,15 +211,24 @@ main > section:nth-child(2) {
     ),
     #731dd8;
   margin: 6em 0;
-  padding-top: 10px;
-  padding-bottom: 44px;
+  padding: 51px 108px;
 }
 
-main > section:nth-child(2) > p {
+main > section:nth-child(2) > h1 {
   color: #731dd8;
   text-align: center;
   font-size: 34px;
   font-weight: 700;
+  margin-bottom: 47px;
+}
+
+main > section:nth-child(2) > div> div {
+  text-align: center;
+}
+
+main > section:nth-child(2) > div> div > p {
+  font-size: 14px;
+  margin-top: 25px;
 }
 
 main > section:nth-child(2) > div {
