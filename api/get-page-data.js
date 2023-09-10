@@ -30,9 +30,13 @@ router.get("/", async (req, res) => {
     const pageContentData = pageDetailsRes.rows[0].page_content;
     const moduleName = pageDetailsRes.rows[0].name;
     const moduleTitle = pageDetailsRes.rows[0].title;
-    const pageTitle = `${moduleName}: ${moduleTitle}`
+    const pageTitle = `${moduleName}: ${moduleTitle}`;
 
-    const pageContent = pageContentData ? pageContentData.content : null;
+    const parsedContent = pageContentData.content
+      ? pageContentData.content
+      : JSON.parse(pageContentData).content;
+
+    const pageContent = pageContentData ? parsedContent : null;
 
     let allPages = allPagesData.rows;
 

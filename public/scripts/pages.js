@@ -1,4 +1,14 @@
-const pageId = window.location.href.split("?")[1];
+const routerQueries = window.location.href.split("?")[1];
+const pageId = routerQueries.split("&")[0];
+const isDevMode = routerQueries.includes("dev-mode=true");
+
+if (isDevMode) {
+  const editPageButton = document.getElementById("edit-page-button");
+  editPageButton.style.display = "flex";
+  editPageButton.addEventListener("click", function () {
+    window.location.href = `/edit-page?pageId=${pageId.split("=")[1]}`;
+  });
+}
 
 document
   .getElementById("back-to-course-button")

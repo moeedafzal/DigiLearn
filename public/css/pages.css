@@ -35,6 +35,11 @@ blockquote {
   margin: auto;
 }
 
+section > section {
+  display: flex;
+  justify-content: space-between;
+}
+
 blockquote > i {
   font-style: italic;
   font-family: "Roboto";
@@ -94,4 +99,8 @@ section > div > section {
 
 section > div > section > button:nth-child(2) {
   margin-left: auto;
+}
+
+#edit-page-button {
+  display: none;
 }

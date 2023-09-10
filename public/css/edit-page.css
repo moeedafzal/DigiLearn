@@ -1,0 +1,20 @@
+main > div {
+  display: flex;
+  justify-content: end;
+}
+
+
+main > div > button {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 44px;
+  display: none;
+}
+
+section > section {
+  display: flex;
+  justify-content: space-between;
+}
