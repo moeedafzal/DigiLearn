@@ -258,10 +258,14 @@ ul {
 
 ul {
   list-style-position: inside;
-  list-style-type: disc; 
+  list-style-type: disc;
 }
 
 ol {
   list-style-type: decimal;
-  list-style-position: inside; 
+  list-style-position: inside;
+}
+
+li {
+  margin: 8px 0;
 }

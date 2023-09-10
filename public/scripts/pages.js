@@ -1,12 +1,15 @@
 const pageId = window.location.href.split("?")[1];
 
 document
-        .getElementById("back-to-course-button")
-        .addEventListener("click", function () {
-          window.location.href = "index.html";
-        });
+  .getElementById("back-to-course-button")
+  .addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const loadingScreen = createLoadingScreen();
+  document.body.appendChild(loadingScreen);
+
   async function getPageData() {
     try {
       const response = await fetch(`/get-page-data?${pageId}`);
@@ -44,8 +47,46 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("main").style.display = "block";
     } catch (error) {
       console.error("There was a problem fetching the page data:", error);
+    } finally {
+      document.body.removeChild(loadingScreen);
     }
   }
 
   getPageData();
 });
+
+function createLoadingScreen() {
+  const loadingScreen = document.createElement("div");
+  loadingScreen.className = "loading-screen";
+  loadingScreen.innerHTML = '<div class="loader"></div>';
+
+  return loadingScreen;
+}
+
+function createModuleCard(module) {
+  const card = document.createElement("div");
+
+  // Create card content
+  const name = document.createElement("h2");
+  name.textContent = module.name;
+
+  const title = document.createElement("h3");
+  title.textContent = module.title;
+
+  const description = document.createElement("p");
+  description.textContent = module.description;
+
+  const seeModuleButton = document.createElement("button");
+  seeModuleButton.innerHTML = `<span>See Module</span> <img src="/img/vector.png" />`;
+  seeModuleButton.addEventListener("click", function () {
+    window.location.href = `pages?pageId=${module.page_id}`;
+  });
+
+  // Append content to card
+  card.appendChild(name);
+  card.appendChild(title);
+  card.appendChild(description);
+  card.appendChild(seeModuleButton);
+
+  return card;
+}
