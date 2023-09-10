@@ -10,6 +10,11 @@ app.use(express.static("public"));
 
 app.use("/get-modules", require("./api/get-modules.js"));
 
+app.get('/pages', (req, res) => {
+  res.sendFile(__dirname + '/public/pages.html');
+});
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

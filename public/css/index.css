@@ -1,0 +1,110 @@
+main > section:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+
+main > section:nth-child(1) > div > h1 {
+  font-size: 34px;
+  margin-bottom: 22px;
+  font-weight: 700;
+}
+
+main > section:nth-child(1) > div > p {
+  font-size: 18px;
+  line-height: normal;
+  font-style: normal;
+  font-weight: 400;
+}
+
+main > section:nth-child(2) {
+  border-radius: 10px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.9) 100%
+    ),
+    #731dd8;
+  margin: 6em 0;
+  padding: 51px 108px;
+}
+
+main > section:nth-child(2) > h1 {
+  color: #731dd8;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 47px;
+}
+
+main > section:nth-child(2) > div> div {
+  text-align: center;
+}
+
+main > section:nth-child(2) > div> div > p {
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+main > section:nth-child(2) > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+main > section:nth-child(3) {
+  margin: 6em 0;
+}
+
+main > section:nth-child(3) > h1 {
+  font-size: 34px;
+  margin-bottom: 32px;
+}
+
+main > section:nth-child(3) > div > div {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0;
+  padding: 38px 54px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+main > section:nth-child(3) > div > div h2 {
+  color: #A289C0;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+main > section:nth-child(3) > div > div h3 {
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+main > section:nth-child(3) > div > div p {
+  font-size: 16px;
+  margin-bottom: 85px;
+  line-height: normal;
+}
+
+main > section:nth-child(3) > div > div button {
+  align-self: flex-end;
+}
+
+main button {
+  border-radius: 8px;
+  border: 0.5px solid rgba(115, 29, 216, 0.5);
+  background: #fff;
+  display: flex;
+  padding: 10px 13px;
+  font-size: 16px;
+  align-items: center;
+  gap: 10px;
+}
+
+main button > span {
+  margin-top: 1px;
+}
+
