@@ -150,7 +150,7 @@ nav {
   font-family: "Nunito";
 }
 
-nav > ul > button {
+nav > div > button {
   font-family: "Nunito";
 }
 
@@ -176,7 +176,7 @@ button > span {
   color: #731dd8;
 }
 
-nav > ul {
+nav > div {
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -184,17 +184,17 @@ nav > ul {
   width: 300px;
 }
 
-nav > ul > li {
+nav > div > span {
   display: inline-block;
 }
 
-nav > ul > li > a {
+nav > div > span > a {
   color: white;
   text-decoration: none;
   font-size: 16px;
 }
 
-nav > ul > li > a.active {
+nav > div > span > a.active {
   text-decoration: none;
   padding-bottom: 5px;
   border-bottom: 2px solid #fff;
