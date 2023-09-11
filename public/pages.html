@@ -23,12 +23,24 @@
         <a href="index.html">
           <img src="/img/logo.svg" alt="digilearn" />
         </a>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li id="contact-button">Contact</li>
-        </ul>
+        <div>
+          <span><a href="index.html">Home</a></span>
+          <span id="contact-button">Contact</span>
+        </div>
+        <span id="open-menu-button"
+          ><img src="/img/hamburger.svg" alt="Open Menu Button"
+        /></span>
       </nav>
     </header>
+
+    <!-- Hamburger menu -->
+    <div id="small-screen-menu">
+      <div>
+        <a href="index.html">Home</a>
+        <a id="contact-menu-button">Contact</a>
+      </div>
+    </div>
+
     <main>
       <section>
         <section>
@@ -66,6 +78,9 @@
     <footer>
       <p>© digilearn.pro</p>
     </footer>
-    <script src="./scripts/pages.js"></script>
+    <script src="./scripts/utils.js" type="module"></script>
+    <script src="./scripts/pages.js" type="module"></script>
+    <script src="./scripts/contact.js" type="module"></script>
+    <script src="./scripts/menu.js" type="module"></script>
   </body>
 </html>
