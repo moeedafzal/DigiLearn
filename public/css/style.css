@@ -140,7 +140,7 @@ header {
 }
 
 nav {
-  padding: 0 8em;
+  padding: 0 12%;
   background: #731dd8;
   color: white;
   display: flex;
@@ -156,8 +156,19 @@ nav > ul > button {
 
 
 main {
-  padding: 6em 14em;
+  padding: 6em 20%;
   flex-grow: 1;
+}
+@media only screen and (max-width: 850px) {
+  main {
+    padding: 6em 10%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  main {
+    padding: 6em 5%;
+  }
 }
 
 button {
@@ -291,4 +302,11 @@ li {
 
 #contact-button {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  main {
+    /* padding: 6em 7em; */
+    /* flex-grow: 1; */
+  }
 }

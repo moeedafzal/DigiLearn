@@ -5,6 +5,10 @@ main > section:nth-child(1) {
   gap: 80px;
 }
 
+/* main > section:nth-child(1) > img{
+  width: 70vw;
+} */
+
 main > section:nth-child(1) > div > h1 {
   font-size: 34px;
   margin-bottom: 22px;
@@ -36,6 +40,7 @@ main > section:nth-child(2) > h1 {
   font-size: 34px;
   font-weight: 700;
   margin-bottom: 47px;
+  /* padding: 0; */
 }
 
 main > section:nth-child(2) > div > div {
@@ -51,6 +56,7 @@ main > section:nth-child(2) > div {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 main > section:nth-child(3) {
@@ -181,3 +187,18 @@ main > section:nth-child(3) > div > div button {
 #login-popup > div > form > button:active {
   background: #B283EA;
 }
+
+@media only screen and (max-width: 850px) {
+  main > section:nth-child(1) > img{
+    width: 20em;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main > section:nth-child(1) > img {
+    display: none;
+  }
+}
+
+
