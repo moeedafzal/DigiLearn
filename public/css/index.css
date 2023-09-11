@@ -31,7 +31,7 @@ main > section:nth-child(2) {
     ),
     #731dd8;
   margin: 6em 0;
-  padding: 51px 108px;
+  padding: 51px 88px;
 }
 
 main > section:nth-child(2) > h1 {
@@ -40,7 +40,6 @@ main > section:nth-child(2) > h1 {
   font-size: 34px;
   font-weight: 700;
   margin-bottom: 47px;
-  /* padding: 0; */
 }
 
 main > section:nth-child(2) > div > div {
@@ -161,7 +160,7 @@ main > section:nth-child(3) > div > div button {
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   padding-left: 12px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 
@@ -171,7 +170,7 @@ main > section:nth-child(3) > div > div button {
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   padding: 14px 0px 0px 12px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 
@@ -179,7 +178,7 @@ main > section:nth-child(3) > div > div button {
   align-self: center;
   width: 100%;
   border-radius: 4px;
-  background: #731DD8;
+  background: #731dd8;
   padding: 8px 16px;
   color: #fff;
   font-family: Nunito;
@@ -188,24 +187,26 @@ main > section:nth-child(3) > div > div button {
 }
 
 #login-popup > div > form > button:hover {
-  background: #8F4AE0;
+  background: #8f4ae0;
 }
 
 #login-popup > div > form > button:active {
-  background: #B283EA;
+  background: #b283ea;
 }
 
-@media only screen and (max-width: 850px) {
-  main > section:nth-child(1) > img{
-    width: 20em;
-    padding: 0;
+@media screen and (max-width: 1024px) {
+  main > section:nth-child(2) {
+    padding: 51px 34px;
+  }
+
+  @media screen and (max-width: 768px) {
+    main > section:nth-child(1) > img {
+      display: none;
+    }
+
+    main > section:nth-child(2) > div > div {
+      flex: 50%;
+      margin: 32px 0;
+    }
   }
 }
-
-@media only screen and (max-width: 600px) {
-  main > section:nth-child(1) > img {
-    display: none;
-  }
-}
-
-
