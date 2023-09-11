@@ -15,6 +15,7 @@ app.use(express.static("public"));
 app.use("/get-modules", require("./api/get-modules.js"));
 app.use("/get-page-data", require("./api/get-page-data.js"));
 app.use("/edit-page-data", require("./api/edit-page-data.js"));
+app.use("/insert_contact_information", require("./api/insert_contact_information.js"));
 
 // Handling requests
 app.get('/pages', (req, res) => {
