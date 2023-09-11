@@ -1,3 +1,5 @@
+import { startLoader, stopLoader } from "./utils.js";
+
 // Take the page id out from the router query
 const routerQueries = window.location.href.split("?")[1];
 const pageId = routerQueries.split("&")[0];
@@ -20,12 +22,11 @@ document
   });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const loadingScreen = createLoadingScreen();
-  document.body.appendChild(loadingScreen);
+  startLoader();
 
   async function getPageData() {
     try {
-      // Fecthing Module content from database
+      // Fetching Module content from database
 
       const response = await fetch(`/get-page-data?${pageId}`);
 
@@ -68,17 +69,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("There was a problem fetching the page data:", error);
     } finally {
-      document.body.removeChild(loadingScreen);
+      stopLoader();
     }
   }
 
   getPageData();
 });
 
-function createLoadingScreen() {
-  const loadingScreen = document.createElement("div");
-  loadingScreen.className = "loading-screen";
-  loadingScreen.innerHTML = '<div class="loader"></div>';
-
-  return loadingScreen;
-}

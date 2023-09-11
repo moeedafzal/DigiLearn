@@ -156,14 +156,36 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 52px;
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
-nav > ul > button {
-  font-family: "Nunito";
+nav > div > button {
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
-nav > ul {
+main {
+  padding: 6em 14em;
+  flex-grow: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover, #small-screen-menu button:hover {
+  background: #F1E8FB;
+}
+
+button:active, #small-screen-menu button:active {
+  background: #E1D5EF;
+}
+
+button > span {
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  color: #731dd8;
+}
+
+nav > div {
   padding: 0;
   display: flex;
   justify-content: space-between;
@@ -171,17 +193,17 @@ nav > ul {
   width: 300px;
 }
 
-nav > ul > li {
+nav > div > span {
   display: inline-block;
 }
 
-nav > ul > li > a {
+nav > div > span > a {
   color: white;
   text-decoration: none;
   font-size: 16px;
 }
 
-nav > ul > li > a.active {
+nav > div > span > a.active {
   text-decoration: none;
   padding-bottom: 5px;
   border-bottom: 2px solid #fff;
@@ -225,7 +247,7 @@ nav button {
   background: #fff;
 }
 
-main button {
+main button, #small-screen-menu button {
   border-radius: 8px;
   border: 0.5px solid #B98EEB;
   background: #fff;
@@ -234,6 +256,7 @@ main button {
   font-size: 16px;
   align-items: center;
   gap: 10px;
+  width: fit-content;
 }
 
 main button > span {
@@ -314,6 +337,37 @@ li {
   cursor: pointer;
 }
 
+/* Menu Styles */
+#open-menu-button {
+  cursor: pointer;
+  display: none;
+}
+
+#small-screen-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  right: -100%;
+  top: 52px;
+  transition: right 0.75s ease-in-out;
+}
+
+#small-screen-menu > div {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-top: 64px;
+  margin-left: 32px;
+}
+
+#small-screen-menu a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  width: fit-content;
+}
+
 /* --------------------
          MEDIA QUERIES
 -------------------- */
@@ -331,6 +385,14 @@ li {
   @media screen and (max-width: 576px) {
     nav {
       padding: 0 2em;
+    }
+
+    nav > div {
+      display: none;
+    }
+
+    #open-menu-button {
+      display: block;
     }
 
     main {

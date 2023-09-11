@@ -1,4 +1,9 @@
-// Obtaining contact button from DOM
+import { startLoader, stopLoader } from "./utils.js";
+
+const startLearningButton = document.getElementById("start-learning-button");
+const startLearningMenuButton = document.getElementById(
+  "start-learning-menu-button"
+);
 const contactButton = document.getElementById('contact-button');
 const contactPopup = document.getElementById('contact-popup');
 const closeButton = document.getElementById("close-button");
@@ -42,12 +47,10 @@ closeButton.addEventListener("click", function () {
   contactPopup.style.display = "none";
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  const loadingScreen = createLoadingScreen();
-  document.body.appendChild(loadingScreen);
+  startLoader();
 
-  // Fecthing modules from database
+  // Fetching modules from database
   async function fetchModules() {
     try {
       const response = await fetch("/get-modules");
@@ -58,12 +61,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json();
 
-
-      // Obtaining start learning button from DOM
-      const startLearningButton = document.getElementById("start-learning-button");
-
       startLearningButton.addEventListener("click", function () {
         // Adding the desired link in button
+        window.location.href = `pages?pageId=${data.rows[0].page_id}`;
+      });
+
+      startLearningMenuButton.addEventListener("click", function () {
         window.location.href = `pages?pageId=${data.rows[0].page_id}`;
       });
 
@@ -77,23 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("There was a problem fetching the modules:", error);
     } finally {
-      document.body.removeChild(loadingScreen);
+      stopLoader();
     }
   }
 
   fetchModules();
 });
 
-// Responsive loading screen everytime data is fetched
-function createLoadingScreen() {
-  const loadingScreen = document.createElement("div");
-  loadingScreen.className = "loading-screen";
-  loadingScreen.innerHTML = '<div class="loader"></div>';
-
-  return loadingScreen;
-}
-
-// Making Module cards for homepage
 function createModuleCard(module) {
   const card = document.createElement("div");
 

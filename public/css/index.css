@@ -204,5 +204,9 @@ main > section:nth-child(3) > div > div button {
       flex: 50%;
       margin: 32px 0;
     }
+
+    main > section:nth-child(3) > div > div {
+      padding: 38px 24px;
+    }
   }
 }
