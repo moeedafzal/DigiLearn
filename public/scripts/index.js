@@ -1,7 +1,37 @@
 // Obtaining contact button from DOM
 const contactButton = document.getElementById('contact-button');
 const contactPopup = document.getElementById('contact-popup');
-const closeButton = document.getElementById('close-button');
+const closeButton = document.getElementById("close-button");
+const form = document.getElementsByTagName("form")[0];
+
+form.addEventListener("submit", async function (e) {
+  const loadingScreen = createLoadingScreen();
+  document.body.appendChild(loadingScreen);
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const body = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+
+  await fetch("/insert_contact_information", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  })
+    .catch((error) => {
+      console.error("Error:", error);
+    })
+    .finally(() => {
+      document.body.removeChild(loadingScreen);
+    });
+
+  this.submit();
+});
 
 // Event listeners for contact button
 contactButton.addEventListener("click", function () {
@@ -28,8 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json();
 
+
       // Obtaining start learning button from DOM
       const startLearningButton = document.getElementById("start-learning-button");
+
       startLearningButton.addEventListener("click", function () {
         // Adding the desired link in button
         window.location.href = `pages?pageId=${data.rows[0].page_id}`;
