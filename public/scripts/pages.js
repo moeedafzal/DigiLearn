@@ -1,7 +1,9 @@
+// Take the page id out from the router query
 const routerQueries = window.location.href.split("?")[1];
 const pageId = routerQueries.split("&")[0];
 const isDevMode = routerQueries.includes("admin-mode=true");
 
+// If in DevMode "Edit Page" button is visible
 if (isDevMode) {
   const editPageButton = document.getElementById("edit-page-button");
   editPageButton.style.display = "flex";
@@ -10,6 +12,7 @@ if (isDevMode) {
   });
 }
 
+// Button exiting back to homepage
 document
   .getElementById("back-to-course-button")
   .addEventListener("click", function () {
@@ -22,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function getPageData() {
     try {
+      // Fecthing Module content from database
+
       const response = await fetch(`/get-page-data?${pageId}`);
 
       if (!response.ok) {
@@ -32,20 +37,25 @@ document.addEventListener("DOMContentLoaded", function () {
       const pageContent = res.data.page_content;
       if (!pageContent) return;
 
+      // Page title according to the requested module
       document.getElementById("page-title").innerHTML = res.data.page_title;
 
       document.getElementById("page-content").innerHTML = res.data.page_content;
+      // Modules navigation buttons
       const backPageButton = document.getElementById("back-button");
       const nextPageButton = document.getElementById("next-button");
 
+      // Displaying previous module button if previous ID exits
       if (res.data.back_page_id) {
         backPageButton.addEventListener("click", function () {
+          // Adding a link of previous module
           window.location.href = `pages?pageId=${res.data.back_page_id}`;
         });
       } else {
         backPageButton.style.display = "none";
       }
 
+      // Displaying next module button if next ID exits
       if (res.data.next_page_id) {
         nextPageButton.addEventListener("click", function () {
           window.location.href = `pages?pageId=${res.data.next_page_id}`;

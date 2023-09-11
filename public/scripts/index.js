@@ -1,7 +1,9 @@
+// Obtaining contact button from DOM
 const contactButton = document.getElementById('contact-button');
 const contactPopup = document.getElementById('contact-popup');
 const closeButton = document.getElementById('close-button');
 
+// Event listeners for contact button
 contactButton.addEventListener("click", function () {
   contactPopup.style.display = "flex";
 });
@@ -10,27 +12,32 @@ closeButton.addEventListener("click", function () {
   contactPopup.style.display = "none";
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const loadingScreen = createLoadingScreen();
   document.body.appendChild(loadingScreen);
 
+  // Fecthing modules from database
   async function fetchModules() {
     try {
       const response = await fetch("/get-modules");
-
+      
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const data = await response.json();
 
+      // Obtaining start learning button from DOM
       const startLearningButton = document.getElementById("start-learning-button");
       startLearningButton.addEventListener("click", function () {
+        // Adding the desired link in button
         window.location.href = `pages?pageId=${data.rows[0].page_id}`;
       });
 
       const moduleCardsContainer = document.getElementById("module-cards");
 
+      // Displaying modules
       data.rows.forEach((module) => {
         const moduleCard = createModuleCard(module);
         moduleCardsContainer.appendChild(moduleCard);
@@ -45,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchModules();
 });
 
+// Responsive loading screen everytime data is fetched
 function createLoadingScreen() {
   const loadingScreen = document.createElement("div");
   loadingScreen.className = "loading-screen";
@@ -53,6 +61,7 @@ function createLoadingScreen() {
   return loadingScreen;
 }
 
+// Making Module cards for homepage
 function createModuleCard(module) {
   const card = document.createElement("div");
 

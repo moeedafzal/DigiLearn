@@ -1,6 +1,8 @@
+// Take the page id out from the router query
 const routerQueries = window.location.href.split("?")[1];
 const pageId = routerQueries.split("&")[0];
 
+// Button to exit back to page.html
 document
   .getElementById("back-to-page-button")
   .addEventListener("click", function () {
@@ -10,7 +12,7 @@ document
 document.addEventListener("DOMContentLoaded", function () {
   const loadingScreen = createLoadingScreen();
   document.body.appendChild(loadingScreen);
-
+  // Fetching data of the requested module
   async function editPageData() {
     try {
       const response = await fetch(`/get-page-data?${pageId}`);
@@ -23,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const pageContent = res.data.page_content;
       if (!pageContent) return;
 
+      // Page title of the requested module
       document.getElementById("page-title").innerHTML = res.data.page_title;
 
+      // Text area to edit the module content
       const textarea = document.getElementsByTagName("textarea")[0];
       const saveButton = document.getElementById("save-button");
 
@@ -33,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       textarea.style.display = "block";
       saveButton.style.display = "block";
 
+      // Saving posting the content for update
       saveButton.addEventListener("click", function () {
         const loadingScreen = createLoadingScreen();
         document.body.appendChild(loadingScreen);
@@ -64,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
   editPageData();
 });
 
+// Loading screen while fetching data and posting data
 function createLoadingScreen() {
   const loadingScreen = document.createElement("div");
   loadingScreen.className = "loading-screen";
