@@ -8,7 +8,7 @@ main > div > button {
   display: none;
 }
 
-textarea {
+#page-content-container {
   width: 100%;
   margin-bottom: 44px;
   display: none;

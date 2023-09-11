@@ -29,19 +29,20 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("page-title").innerHTML = res.data.page_title;
 
       // Text area to edit the module content
-      const textarea = document.getElementsByTagName("textarea")[0];
+      const pageContentContainer = document.getElementById(
+        "page-content-container"
+      );
       const saveButton = document.getElementById("save-button");
 
-
-      textarea.innerHTML = pageContent;
-      textarea.style.display = "block";
+      pageContentContainer.innerHTML = pageContent;
+      pageContentContainer.style.display = "block";
       saveButton.style.display = "block";
 
       // Saving posting the content for update
       saveButton.addEventListener("click", function () {
         const loadingScreen = createLoadingScreen();
         document.body.appendChild(loadingScreen);
-        const content = textarea.value;
+        const content = pageContentContainer.value;
         fetch("/edit-page-data", {
           method: "POST",
           headers: {

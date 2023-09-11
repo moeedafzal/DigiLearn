@@ -42,6 +42,38 @@
       </div>
     </div>
 
+    <!-- Contact popup -->
+    <div id="contact-popup">
+      <div>
+        <img id="close-button" src="/img/cross-black.svg" alt="Close Button" />
+        <h2>Contact us</h2>
+        <form>
+          <section>
+            <p>Your name</p>
+            <input name="name" type="text" placeholder="Enter name here" />
+          </section>
+          <section>
+            <p>Email address*</p>
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter email here"
+              required
+            />
+          </section>
+          <section>
+            <p>Your message*</p>
+            <textarea
+              name="message"
+              placeholder="Enter message here"
+              required
+            ></textarea>
+          </section>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
     <main>
       <section>
         <!-- Button for exiting back to pages.html page -->
@@ -50,7 +82,7 @@
         </button>
         <h1 id="page-title"></h1>
         <!-- text area displaying html which can be changed -->
-        <textarea name="page-content" rows="50"> </textarea>
+        <textarea id="page-content-container" name="page-content" rows="50"> </textarea>
       </section>
       <div>
         <!-- save changes from this button -->
