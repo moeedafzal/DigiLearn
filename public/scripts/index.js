@@ -1,5 +1,5 @@
 const contactButton = document.getElementById("contact-button");
-const loginPopup = document.getElementById("login-popup");
+const contactPopup = document.getElementById('contact-popup');
 const closeButton = document.getElementById("close-button");
 const form = document.getElementsByTagName("form")[0];
 
@@ -33,11 +33,11 @@ form.addEventListener("submit", async function (e) {
 });
 
 contactButton.addEventListener("click", function () {
-  loginPopup.style.display = "flex";
+  contactPopup.style.display = "flex";
 });
 
 closeButton.addEventListener("click", function () {
-  loginPopup.style.display = "none";
+  contactPopup.style.display = "none";
 });
 
 document.addEventListener("DOMContentLoaded", function () {
