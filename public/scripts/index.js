@@ -1,48 +1,12 @@
-const contactButton = document.getElementById("contact-button");
-const contactPopup = document.getElementById('contact-popup');
-const closeButton = document.getElementById("close-button");
-const form = document.getElementsByTagName("form")[0];
+import { startLoader, stopLoader } from "./utils.js";
 
-form.addEventListener("submit", async function (e) {
-  const loadingScreen = createLoadingScreen();
-  document.body.appendChild(loadingScreen);
-  e.preventDefault();
-
-  const formData = new FormData(form);
-  const body = {
-    name: formData.get("name"),
-    email: formData.get("email"),
-    message: formData.get("message"),
-  };
-
-  await fetch("/insert_contact_information", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  })
-    .catch((error) => {
-      console.error("Error:", error);
-    })
-    .finally(() => {
-      document.body.removeChild(loadingScreen);
-    });
-
-  this.submit();
-});
-
-contactButton.addEventListener("click", function () {
-  contactPopup.style.display = "flex";
-});
-
-closeButton.addEventListener("click", function () {
-  contactPopup.style.display = "none";
-});
+const startLearningButton = document.getElementById("start-learning-button");
+const startLearningMenuButton = document.getElementById(
+  "start-learning-menu-button"
+);
 
 document.addEventListener("DOMContentLoaded", function () {
-  const loadingScreen = createLoadingScreen();
-  document.body.appendChild(loadingScreen);
+  startLoader();
 
   async function fetchModules() {
     try {
@@ -54,10 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const data = await response.json();
 
-      const startLearningButton = document.getElementById(
-        "start-learning-button"
-      );
       startLearningButton.addEventListener("click", function () {
+        window.location.href = `pages?pageId=${data.rows[0].page_id}`;
+      });
+
+      startLearningMenuButton.addEventListener("click", function () {
         window.location.href = `pages?pageId=${data.rows[0].page_id}`;
       });
 
@@ -70,20 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("There was a problem fetching the modules:", error);
     } finally {
-      document.body.removeChild(loadingScreen);
+      stopLoader();
     }
   }
 
   fetchModules();
 });
-
-function createLoadingScreen() {
-  const loadingScreen = document.createElement("div");
-  loadingScreen.className = "loading-screen";
-  loadingScreen.innerHTML = '<div class="loader"></div>';
-
-  return loadingScreen;
-}
 
 function createModuleCard(module) {
   const card = document.createElement("div");

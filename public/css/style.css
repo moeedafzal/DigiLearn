@@ -147,11 +147,11 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 52px;
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
 nav > div > button {
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
 main {
@@ -163,16 +163,16 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button:hover, #small-screen-menu button:hover {
   background: #F1E8FB;
 }
 
-button:active {
+button:active, #small-screen-menu button:active {
   background: #E1D5EF;
 }
 
 button > span {
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   color: #731dd8;
 }
 
@@ -211,7 +211,7 @@ nav button {
   background: #fff;
 }
 
-main button {
+main button, #small-screen-menu button {
   border-radius: 8px;
   border: 0.5px solid #B98EEB;
   background: #fff;
@@ -220,6 +220,7 @@ main button {
   font-size: 16px;
   align-items: center;
   gap: 10px;
+  width: fit-content;
 }
 
 main button > span {
@@ -292,6 +293,37 @@ li {
   cursor: pointer;
 }
 
+/* Menu Styles */
+#open-menu-button {
+  cursor: pointer;
+  display: none;
+}
+
+#small-screen-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  right: -100%;
+  top: 52px;
+  transition: right 0.75s ease-in-out;
+}
+
+#small-screen-menu > div {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  margin-top: 64px;
+  margin-left: 32px;
+}
+
+#small-screen-menu a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  width: fit-content;
+}
+
 
 @media screen and (max-width: 1024px) {
   nav {
@@ -305,6 +337,14 @@ li {
   @media screen and (max-width: 576px) {
     nav {
       padding: 0 2em;
+    }
+
+    nav > div {
+      display: none;
+    }
+
+    #open-menu-button {
+      display: block;
     }
 
     main {

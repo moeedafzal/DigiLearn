@@ -28,8 +28,20 @@
           <span><a href="index.html">Home</a></span>
           <span id="contact-button">Contact</span>
         </div>
+        <span id="open-menu-button"
+          ><img src="/img/hamburger.svg" alt="Open Menu Button"
+        /></span>
       </nav>
     </header>
+
+    <!-- Hamburger menu -->
+    <div id="small-screen-menu">
+      <div>
+        <a href="index.html">Home</a>
+        <a id="contact-menu-button">Contact</a>
+      </div>
+    </div>
+
     <main>
       <section>
         <!-- Button for exiting back to pages.html page -->
@@ -51,6 +63,9 @@
     <footer>
       <p>© digilearn.pro</p>
     </footer>
-    <script src="./scripts/edit-page.js"></script>
+    <script src="./scripts/utils.js" type="module"></script>
+    <script src="./scripts/edit-page.js" type="module"></script>
+    <script src="./scripts/contact.js" type="module"></script>
+    <script src="./scripts/menu.js" type="module"></script>
   </body>
 </html>

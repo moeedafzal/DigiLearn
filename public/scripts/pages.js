@@ -1,3 +1,5 @@
+import { startLoader, stopLoader } from "./utils.js";
+
 const routerQueries = window.location.href.split("?")[1];
 const pageId = routerQueries.split("&")[0];
 const isDevMode = routerQueries.includes("admin-mode=true");
@@ -17,8 +19,7 @@ document
   });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const loadingScreen = createLoadingScreen();
-  document.body.appendChild(loadingScreen);
+  startLoader();
 
   async function getPageData() {
     try {
@@ -58,17 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("There was a problem fetching the page data:", error);
     } finally {
-      document.body.removeChild(loadingScreen);
+      stopLoader();
     }
   }
 
   getPageData();
 });
 
-function createLoadingScreen() {
-  const loadingScreen = document.createElement("div");
-  loadingScreen.className = "loading-screen";
-  loadingScreen.innerHTML = '<div class="loader"></div>';
-
-  return loadingScreen;
-}
