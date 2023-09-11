@@ -1,5 +1,5 @@
 const contactButton = document.getElementById('contact-button');
-const loginPopup = document.getElementById('login-popup');
+const loginPopup = document.getElementById('contact-popup');
 const closeButton = document.getElementById('close-button');
 
 contactButton.addEventListener("click", function () {
