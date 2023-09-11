@@ -1,13 +1,13 @@
 const contactButton = document.getElementById('contact-button');
-const loginPopup = document.getElementById('contact-popup');
+const contactPopup = document.getElementById('contact-popup');
 const closeButton = document.getElementById('close-button');
 
 contactButton.addEventListener("click", function () {
-  loginPopup.style.display = "flex";
+  contactPopup.style.display = "flex";
 });
 
 closeButton.addEventListener("click", function () {
-  loginPopup.style.display = "none";
+  contactPopup.style.display = "none";
 });
 
 document.addEventListener("DOMContentLoaded", function () {
