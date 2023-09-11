@@ -156,6 +156,7 @@ nav > ul > button {
 
 main {
   padding: 6em 14em;
+  flex-grow: 1;
 }
 
 button {
