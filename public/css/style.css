@@ -127,6 +127,9 @@ table {
 
 /* End Meyer Reset */
 
+/* --------------------
+         BODY
+-------------------- */
 body {
   margin: 0;
   font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
@@ -135,10 +138,16 @@ body {
   flex-direction: column;
 }
 
+/* --------------------
+         HEADER
+-------------------- */
 header {
   font-family: "Roboto", "Noto Sans", "Trabuchet MS", "Arial", sans-serif;
 }
 
+/* --------------------
+         NAVBAR
+-------------------- */
 nav {
   padding: 0 7em;
   background: #731dd8;
@@ -152,27 +161,6 @@ nav {
 
 nav > ul > button {
   font-family: "Nunito";
-}
-
-main {
-  padding: 6em 14em;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:hover {
-  background: #F1E8FB;
-}
-
-button:active {
-  background: #E1D5EF;
-}
-
-button > span {
-  font-family: "Nunito";
-  color: #731dd8;
 }
 
 nav > ul {
@@ -200,6 +188,33 @@ nav > ul > li > a.active {
   border-radius: 1px;
 }
 
+/* --------------------
+         MAIN
+-------------------- */
+/* main padding */
+main {
+  padding: 6em 14em;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background: #F1E8FB;
+}
+
+button:active {
+  background: #E1D5EF;
+}
+
+button > span {
+  font-family: "Nunito";
+  color: #731dd8;
+}
+
+/* Distinction between nav buttons and main buttons */
+/* =============================== */
 nav button {
   height: 30px;
   width: 124px;
@@ -224,7 +239,11 @@ main button {
 main button > span {
   margin-top: 1px;
 }
+/* =============================== */
 
+/* --------------------
+         FOOTER
+-------------------- */
 footer {
   background: #787878;
   text-align: center;
@@ -235,6 +254,9 @@ footer {
   justify-content: center;
 }
 
+/* --------------------
+         LOADING
+-------------------- */
 .loading-screen {
   position: fixed;
   top: 0;
@@ -247,6 +269,7 @@ footer {
   align-items: center;
   z-index: 9999;
 }
+
 
 .loader {
   border: 4px solid #f3f3f3;
@@ -291,7 +314,10 @@ li {
   cursor: pointer;
 }
 
-
+/* --------------------
+         MEDIA QUERIES
+-------------------- */
+/* for small laptops we decrease the padding */
 @media screen and (max-width: 1024px) {
   nav {
     padding: 0 3em;
@@ -301,6 +327,7 @@ li {
     padding: 6em;
   }
 
+  /* for smaller screens we decrease the right left padding further */
   @media screen and (max-width: 576px) {
     nav {
       padding: 0 2em;
