@@ -288,3 +288,7 @@ ol {
 li {
   margin: 8px 0;
 }
+
+#contact-button {
+  cursor: pointer;
+}

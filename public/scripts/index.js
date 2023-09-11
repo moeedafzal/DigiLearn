@@ -1,3 +1,15 @@
+const contactButton = document.getElementById('contact-button');
+const loginPopup = document.getElementById('login-popup');
+const closeButton = document.getElementById('close-button');
+
+contactButton.addEventListener("click", function () {
+  loginPopup.style.display = "flex";
+});
+
+closeButton.addEventListener("click", function () {
+  loginPopup.style.display = "none";
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const loadingScreen = createLoadingScreen();
   document.body.appendChild(loadingScreen);
