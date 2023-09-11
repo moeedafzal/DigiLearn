@@ -4,14 +4,57 @@ const startLearningButton = document.getElementById("start-learning-button");
 const startLearningMenuButton = document.getElementById(
   "start-learning-menu-button"
 );
+const contactButton = document.getElementById('contact-button');
+const contactPopup = document.getElementById('contact-popup');
+const closeButton = document.getElementById("close-button");
+const form = document.getElementsByTagName("form")[0];
+
+form.addEventListener("submit", async function (e) {
+  const loadingScreen = createLoadingScreen();
+  document.body.appendChild(loadingScreen);
+  e.preventDefault();
+
+  const formData = new FormData(form);
+  const body = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+
+  await fetch("/insert_contact_information", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  })
+    .catch((error) => {
+      console.error("Error:", error);
+    })
+    .finally(() => {
+      document.body.removeChild(loadingScreen);
+    });
+
+  this.submit();
+});
+
+// Event listeners for contact button
+contactButton.addEventListener("click", function () {
+  contactPopup.style.display = "flex";
+});
+
+closeButton.addEventListener("click", function () {
+  contactPopup.style.display = "none";
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   startLoader();
 
+  // Fetching modules from database
   async function fetchModules() {
     try {
       const response = await fetch("/get-modules");
-
+      
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -19,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const data = await response.json();
 
       startLearningButton.addEventListener("click", function () {
+        // Adding the desired link in button
         window.location.href = `pages?pageId=${data.rows[0].page_id}`;
       });
 
@@ -28,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const moduleCardsContainer = document.getElementById("module-cards");
 
+      // Displaying modules
       data.rows.forEach((module) => {
         const moduleCard = createModuleCard(module);
         moduleCardsContainer.appendChild(moduleCard);
