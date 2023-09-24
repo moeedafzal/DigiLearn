@@ -1,13 +1,15 @@
 import { startLoader, stopLoader, closeMenu } from "./utils.js";
 
-const contactButton = document.getElementById("contact-button");
+const contactButtons = document.querySelectorAll(".contact-button");
 const contactMenuButton = document.getElementById("contact-menu-button");
-const contactPopup = document.getElementById('contact-popup');
-const closeButton = document.getElementById("close-button")
+const contactPopup = document.getElementById("contact-popup");
+const closeButton = document.getElementById("close-button");
 const form = document.getElementsByTagName("form")[0];
 
-contactButton.addEventListener("click", function () {
-  contactPopup.style.display = "flex";
+contactButtons.forEach((contactButton) => {
+  contactButton.addEventListener("click", function () {
+    contactPopup.style.display = "flex";
+  });
 });
 
 contactMenuButton.addEventListener("click", function () {

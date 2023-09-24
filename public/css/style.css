@@ -136,6 +136,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #ebecee;
 }
 
 /* --------------------
@@ -150,7 +151,7 @@ header {
 -------------------- */
 nav {
   padding: 0 7em;
-  background: #731dd8;
+  background: #170b24;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -172,12 +173,14 @@ button {
   cursor: pointer;
 }
 
-button:hover, #small-screen-menu button:hover {
-  background: #F1E8FB;
+button:hover,
+#small-screen-menu button:hover {
+  background: #f1e8fb;
 }
 
-button:active, #small-screen-menu button:active {
-  background: #E1D5EF;
+button:active,
+#small-screen-menu button:active {
+  background: #e1d5ef;
 }
 
 button > span {
@@ -190,20 +193,20 @@ nav > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 135px;
 }
 
 nav > div > span {
   display: inline-block;
 }
 
-nav > div > span > a {
+nav a {
   color: white;
   text-decoration: none;
   font-size: 16px;
 }
 
-nav > div > span > a.active {
+nav a.active {
   text-decoration: none;
   padding-bottom: 5px;
   border-bottom: 2px solid #fff;
@@ -223,11 +226,11 @@ button {
 }
 
 button:hover {
-  background: #F1E8FB;
+  background: #f1e8fb;
 }
 
 button:active {
-  background: #E1D5EF;
+  background: #e1d5ef;
 }
 
 button > span {
@@ -237,7 +240,7 @@ button > span {
 
 /* Distinction between nav buttons and main buttons */
 /* =============================== */
-nav button {
+/* nav button {
   height: 30px;
   width: 124px;
   color: #731dd8;
@@ -245,11 +248,12 @@ nav button {
   border-radius: 4px;
   border: 1px solid #731dd8;
   background: #fff;
-}
+} */
 
-main button, #small-screen-menu button {
+/* main button, #small-screen-menu button { */
+button {
   border-radius: 8px;
-  border: 0.5px solid #B98EEB;
+  border: 0.5px solid #b98eeb;
   background: #fff;
   display: flex;
   padding: 10px 13px;
@@ -259,7 +263,7 @@ main button, #small-screen-menu button {
   width: fit-content;
 }
 
-main button > span {
+button > span {
   margin-top: 1px;
 }
 /* =============================== */
@@ -268,13 +272,28 @@ main button > span {
          FOOTER
 -------------------- */
 footer {
-  background: #787878;
+  background: #170b24;
   text-align: center;
   color: white;
   height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
+  display: flex;
+  gap: 16px;
+}
+
+footer div {
+  cursor: pointer;
+}
+
+footer span {
+  cursor: default;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
 }
 
 /* --------------------
@@ -292,7 +311,6 @@ footer {
   align-items: center;
   z-index: 9999;
 }
-
 
 .loader {
   border: 4px solid #f3f3f3;
@@ -428,7 +446,7 @@ li {
   background: #b283ea;
 }
 
-#contact-button {
+.contact-button {
   cursor: pointer;
 }
 

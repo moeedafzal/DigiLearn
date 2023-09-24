@@ -11,7 +11,7 @@ const pool = new Pool({
 
 router.get("/", async (req, res) => {
   try {
-    const query = `SELECT m.id, m.name, m.title, m.description, m.total_pages, p.id as "page_id"
+    const query = `SELECT p.id as "page_id"
     FROM modules m
     JOIN pages p ON p.module_id = m.id WHERE page_number = 1
     ORDER BY m.id`;
@@ -24,8 +24,8 @@ router.get("/", async (req, res) => {
       throw new Error("No modules found");
     }
 
-    const rows = modules.rows;
-    return res.status(200).json({ rows });
+    const page_id = modules.rows[0].page_id;
+    return res.status(200).json({ page_id });
   } catch (error) {
     console.error("Error fetching pages:", error.message);
     res
