@@ -37,13 +37,16 @@ router.get("/", async (req, res) => {
 
     const allPages = allPagesData.rows;
     const last_page_number = allPages[allPages.length - 1].page_number;
-    const all_pages_titles = allPages.map((page) => page.title);
+    let all_pages_data = [];
+    allPages.forEach((page) => {
+      all_pages_data.push({ page_number: page.page_number, title: page.title });
+    });
 
 
     const data = {
       page_title,
       page_content,
-      all_pages_titles,
+      all_pages_data,
       last_page_number,
     };
 

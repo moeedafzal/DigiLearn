@@ -1,5 +1,6 @@
 body {
-  font-family: "Roboto";
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+  background: #FFF;
 }
 
 main {
@@ -49,19 +50,49 @@ blockquote {
   margin: auto;
 }
 
-main > div {
-  min-width: 184px;
+aside {
+  min-width: fit-content;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
-main > div > span {
+aside > span {
   display: flex;
   color: #545454;
   gap: 4px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+aside > span > img {
+  margin-bottom: 2px;
+}
+
+aside > div > div {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(184, 184, 184, 0.5);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+aside > div > div > a {
+  color: #545454;
+  font-size: 12px;
+  margin-left: 2px
+}
+
+.active-page {
+  background: #F1E8FB;
+  border: 1px solid #731DD8;
+}
+
+.active-page > a {
+  color: #731DD8;
 }
 
 blockquote > i {
   font-style: italic;
-  font-family: "Roboto";
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   display: block;
   color: #36827F;
   line-height: 20px;
@@ -73,7 +104,7 @@ blockquote > i {
 blockquote > cite {
   align-self: flex-end;
   color: #393939;
-  font-family: "Roboto";
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
@@ -82,7 +113,7 @@ blockquote > cite {
 section > div {
   background: #FFFCF4;
   border-radius: 10px;
-  border: 0.25px solid #C57B57;
+  border: 1px solid rgba(197, 123, 87, 0.5);
   padding: 60px;
   font-size: 16px;
   line-height: 20px;

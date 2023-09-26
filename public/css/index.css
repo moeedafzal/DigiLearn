@@ -8,7 +8,6 @@ button {
 }
 
 a {
-  text-decoration: none;
   display: inline-block;
 }
 
@@ -26,6 +25,7 @@ main > section:nth-child(1) > div > h1 {
 }
 
 main > section:nth-child(1) > div > p {
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 18px;
   line-height: normal;
   font-style: normal;
