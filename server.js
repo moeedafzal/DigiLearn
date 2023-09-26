@@ -25,6 +25,10 @@ app.get('/edit-page', (req, res) => {
   res.sendFile(__dirname + '/public/edit-page.html');
 });
 
+app.get('/privacy-policy', (req, res) => {
+  res.sendFile(__dirname + '/public/privacy-policy.html');
+});
+
 // Initiates our site on Port 3000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
