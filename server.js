@@ -29,6 +29,14 @@ app.get('/privacy-policy', (req, res) => {
   res.sendFile(__dirname + '/public/privacy-policy.html');
 });
 
+// app.use((req, res, next) => {
+//   res.status(404).sendFile(__dirname + '/404.html');
+// });
+
+app.get('*', function(req, res){
+  res.status(404).sendFile(__dirname + '/public/404.html');
+});
+
 // Initiates our site on Port 3000
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

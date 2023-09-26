@@ -1,0 +1,42 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  color: #000;
+  text-align: center;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+main a {
+  margin-top: 32px;
+}
+
+button {
+  justify-content: center;
+  width: 320px;
+  border-radius: 4px;
+  background: #731dd8;
+  padding: 8px 16px;
+  color: #fff;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-size: 16px;
+  border: none;
+}
+
+button:hover {
+  background: #8f4ae0;
+}
+
+button:active {
+  background: #b283ea;
+}
+

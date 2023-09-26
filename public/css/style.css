@@ -250,7 +250,7 @@ button:active {
 }
 
 button > span {
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   color: #633E2C;
   margin-top: 1px;
 }
@@ -371,7 +371,7 @@ li {
 
 #contact-popup > div > h2 {
   text-align: center;
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #262626;
@@ -387,7 +387,7 @@ li {
 
 #contact-popup > div > form > section > p {
   color: #262626;
-  font-family: Nunito;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -421,7 +421,7 @@ li {
   background: #731dd8;
   padding: 8px 16px;
   color: #fff;
-  font-family: Nunito;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 16px;
   border: none;
 }
