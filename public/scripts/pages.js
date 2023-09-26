@@ -2,7 +2,7 @@ import { startLoader, stopLoader } from "./utils.js";
 
 // Take the page id out from the router query
 const routerQueries = window.location.href.split("?")[1];
-const pageId = routerQueries.split("&")[0];
+const pageNumber = routerQueries.split("&")[0].split("=")[1];
 const isDevMode = routerQueries.includes("admin-mode=true");
 
 // If in DevMode "Edit Page" button is visible
@@ -10,7 +10,7 @@ if (isDevMode) {
   const editPageButton = document.getElementById("edit-page-button");
   editPageButton.style.display = "flex";
   editPageButton.addEventListener("click", function () {
-    window.location.href = `/edit-page?pageId=${pageId.split("=")[1]}`;
+    window.location.href = `/edit-page?pageNumber=${pageNumber}`;
   });
 }
 
@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function getPageData() {
     try {
       // Fetching Module content from database
-
-      const response = await fetch(`/get-page-data?${pageId}`);
+      const response = await fetch(`/get-page-data?pageNumber=${pageNumber}`);
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -46,20 +45,23 @@ document.addEventListener("DOMContentLoaded", function () {
       const backPageButton = document.getElementById("back-button");
       const nextPageButton = document.getElementById("next-button");
 
-      // Displaying previous module button if previous ID exits
-      if (res.data.back_page_id) {
+      // Displaying previous module button if current page is not the first one
+      if (parseInt(pageNumber) > 1) {
         backPageButton.addEventListener("click", function () {
           // Adding a link of previous module
-          window.location.href = `pages?pageId=${res.data.back_page_id}`;
+          window.location.href = `pages?pageNumber=${parseInt(pageNumber) - 1}`;
         });
       } else {
         backPageButton.style.display = "none";
       }
 
-      // Displaying next module button if next ID exits
-      if (res.data.next_page_id) {
+      // Displaying next module button if current page is not the last one
+      if (
+        parseInt(res.data.last_page_number) &&
+        parseInt(res.data.last_page_number) > parseInt(pageNumber)
+      ) {
         nextPageButton.addEventListener("click", function () {
-          window.location.href = `pages?pageId=${res.data.next_page_id}`;
+          window.location.href = `pages?pageNumber=${parseInt(pageNumber) + 1}`;
         });
       } else {
         nextPageButton.style.display = "none";
@@ -75,4 +77,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   getPageData();
 });
-

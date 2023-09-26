@@ -1,16 +1,16 @@
 body {
-  background: #F1E8FB;
   font-family: "Roboto";
 }
 
 main {
-  padding-top: 50px;
+  padding: 2.5em 7em 6em 7em;
+  display: flex;
+  gap: 32px
 }
 
 /* Heading */
 h1 {
-  margin-top: 44px;
-  margin-bottom: 67px;
+  margin-bottom: 32px;
   color: #000;
   font-size: 34px;
   line-height: normal;
@@ -49,9 +49,14 @@ blockquote {
   margin: auto;
 }
 
-section > section {
+main > div {
+  min-width: 184px;
+}
+
+main > div > span {
   display: flex;
-  justify-content: space-between;
+  color: #545454;
+  gap: 4px;
 }
 
 blockquote > i {
@@ -74,12 +79,10 @@ blockquote > cite {
   line-height: 20px;
 }
 
-
-
 section > div {
-  background: #fff;
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.10);;
+  background: #FFFCF4;
   border-radius: 10px;
+  border: 0.25px solid #C57B57;
   padding: 60px;
   font-size: 16px;
   line-height: 20px;

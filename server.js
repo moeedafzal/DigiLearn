@@ -12,7 +12,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Defining API endpoints
-app.use("/get-initial-page-id", require("./api/get-initial-page-id.js"));
 app.use("/get-page-data", require("./api/get-page-data.js"));
 app.use("/edit-page-data", require("./api/edit-page-data.js"));
 app.use("/insert_contact_information", require("./api/insert_contact_information.js"));
