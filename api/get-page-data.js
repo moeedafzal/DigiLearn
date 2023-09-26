@@ -50,8 +50,6 @@ router.get("/", async (req, res) => {
       last_page_number,
     };
 
-    console.log("Data: ", data);
-
     return res.status(200).json({ data });
   } catch (error) {
     console.error("Error fetching pages:", error.message);

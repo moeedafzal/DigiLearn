@@ -76,6 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
       res.data.all_pages_data.forEach((page) => {
         const pageDiv = document.createElement("div");
 
+        pageDiv.addEventListener("click", function () {
+          window.location.href = `pages?pageNumber=${page.page_number}`;
+        });
+
         const image = document.createElement("img");
         image.src = "/img/stars.svg";
         image.alt = "stars";
@@ -86,12 +90,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         
-        const pageLink = document.createElement("a");
-        pageLink.href = `pages?pageNumber=${page.page_number}`;
-        pageLink.innerHTML = page.title;
+        const pageTitle = document.createElement("span");
+        pageTitle.innerHTML = page.title;
 
         pageDiv.appendChild(image);
-        pageDiv.appendChild(pageLink);
+        pageDiv.appendChild(pageTitle);
         pageNavigationSection.appendChild(pageDiv);
       });
 

@@ -224,40 +224,11 @@ main {
   padding: 6em 14em;
 }
 
-button {
-  cursor: pointer;
-}
 
-button:hover {
-  background: #f1e8fb;
-}
-
-button:active {
-  background: #e1d5ef;
-}
-
-button > span {
-  font-family: "Nunito";
-  color: #731dd8;
-}
-
-/* Distinction between nav buttons and main buttons */
-/* =============================== */
-/* nav button {
-  height: 30px;
-  width: 124px;
-  color: #731dd8;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #731dd8;
-  background: #fff;
-} */
-
-/* main button, #small-screen-menu button { */
 button {
   border-radius: 8px;
-  border: 0.5px solid #b98eeb;
-  background: #fff;
+  border: 1px solid rgba(197, 123, 87, 0.5);
+  background: #FFFFFF;
   display: flex;
   padding: 10px 13px;
   font-size: 16px;
@@ -266,10 +237,24 @@ button {
   width: fit-content;
 }
 
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background: #F9F2EE;
+}
+
+button:active {
+  background: #F3E5DD;
+}
+
 button > span {
+  font-family: "Nunito";
+  color: #633E2C;
   margin-top: 1px;
 }
-/* =============================== */
+
 
 /* --------------------
          FOOTER

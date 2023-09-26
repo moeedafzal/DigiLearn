@@ -56,6 +56,7 @@ aside {
 }
 
 aside > span {
+  cursor: pointer;
   display: flex;
   color: #545454;
   gap: 4px;
@@ -63,11 +64,20 @@ aside > span {
   margin-bottom: 20px;
 }
 
+aside > span:hover {
+  color: #A289C0;
+}
+
+aside > span:active {
+  color: #731DD8;
+}
+
 aside > span > img {
   margin-bottom: 2px;
 }
 
 aside > div > div {
+  cursor: pointer;
   display: flex;
   align-items: center;
   border: 1px solid rgba(184, 184, 184, 0.5);
@@ -75,7 +85,25 @@ aside > div > div {
   padding: 12px;
 }
 
-aside > div > div > a {
+aside > div > div:hover {
+  border: 1px solid #E4D0FC;
+  background: #F8F4FD;
+}
+
+aside > div > div:hover span {
+  color: #8A43DE;
+}
+
+aside > div > div:active {
+  border: 1px solid #731DD8;
+  background: #F1E8FB;
+}
+
+aside > div > div:hover span {
+  color: #731DD8;
+}
+
+aside > div > div > span {
   color: #545454;
   font-size: 12px;
   margin-left: 2px
@@ -86,7 +114,7 @@ aside > div > div > a {
   border: 1px solid #731DD8;
 }
 
-.active-page > a {
+.active-page span {
   color: #731DD8;
 }
 

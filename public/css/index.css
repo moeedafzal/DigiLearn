@@ -7,6 +7,14 @@ button {
   justify-content: center;
 }
 
+button:hover {
+  background: #B283EA;
+}
+
+button:active {
+  background: #8F4AE0;
+}
+
 a {
   display: inline-block;
 }
