@@ -1,6 +1,11 @@
 const openMenuButton = document.getElementById("open-menu-button");
 const smallScreenMenu = document.getElementById("small-screen-menu");
+const goHomeButton = document.getElementById("go-home-button");
 const body = document.body;
+
+goHomeButton.addEventListener("click", () => {
+  window.location.href = `index.html`;
+});
 
 export function openMenu() {
   smallScreenMenu.style.right = "0";
