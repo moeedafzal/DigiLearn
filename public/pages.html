@@ -16,6 +16,22 @@
       rel="stylesheet"
     />
   </head>
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-414VTNV1FF"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-414VTNV1FF");
+  </script>
+
   <body>
     <header>
       <!-- Nav Section -->
@@ -75,9 +91,14 @@
 
     <!-- Small Screen Side Bar -->
     <div id="small-screen-side-bar">
-      <img id="close-side-bar-button" src="/img/sidebar-icon.svg" alt="sidebar icon" width="32" height="32">
-      <div id="page-navigation-side-bar">
-      </div>
+      <img
+        id="close-side-bar-button"
+        src="/img/sidebar-icon.svg"
+        alt="sidebar icon"
+        width="32"
+        height="32"
+      />
+      <div id="page-navigation-side-bar"></div>
     </div>
 
     <main>
@@ -89,7 +110,13 @@
             >
           </span>
         </a>
-        <img id="open-side-bar-button" src="/img/sidebar-icon.svg" alt="sidebar icon" width="32" height="32">
+        <img
+          id="open-side-bar-button"
+          src="/img/sidebar-icon.svg"
+          alt="sidebar icon"
+          width="32"
+          height="32"
+        />
       </div>
 
       <aside>
