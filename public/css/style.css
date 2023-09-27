@@ -132,17 +132,18 @@ table {
 -------------------- */
 body {
   margin: 0;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #ebecee;
 }
 
 /* --------------------
          HEADER
 -------------------- */
 header {
-  font-family: "Roboto", "Noto Sans", "Trabuchet MS", "Arial", sans-serif;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
 /* --------------------
@@ -150,7 +151,7 @@ header {
 -------------------- */
 nav {
   padding: 0 7em;
-  background: #731dd8;
+  background: #170b24;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -159,7 +160,7 @@ nav {
   font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
-nav > div > button {
+nav > div > a > button {
   font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
@@ -168,16 +169,22 @@ main {
   flex-grow: 1;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   cursor: pointer;
 }
 
-button:hover, #small-screen-menu button:hover {
-  background: #F1E8FB;
+button:hover,
+#small-screen-menu button:hover {
+  background: #f1e8fb;
 }
 
-button:active, #small-screen-menu button:active {
-  background: #E1D5EF;
+button:active,
+#small-screen-menu button:active {
+  background: #e1d5ef;
 }
 
 button > span {
@@ -190,20 +197,19 @@ nav > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
+  width: 135px;
 }
 
 nav > div > span {
   display: inline-block;
 }
 
-nav > div > span > a {
+nav a {
   color: white;
-  text-decoration: none;
   font-size: 16px;
 }
 
-nav > div > span > a.active {
+nav a.active {
   text-decoration: none;
   padding-bottom: 5px;
   border-bottom: 2px solid #fff;
@@ -218,39 +224,11 @@ main {
   padding: 6em 14em;
 }
 
+
 button {
-  cursor: pointer;
-}
-
-button:hover {
-  background: #F1E8FB;
-}
-
-button:active {
-  background: #E1D5EF;
-}
-
-button > span {
-  font-family: "Nunito";
-  color: #731dd8;
-}
-
-/* Distinction between nav buttons and main buttons */
-/* =============================== */
-nav button {
-  height: 30px;
-  width: 124px;
-  color: #731dd8;
-  font-size: 16px;
-  border-radius: 4px;
-  border: 1px solid #731dd8;
-  background: #fff;
-}
-
-main button, #small-screen-menu button {
   border-radius: 8px;
-  border: 0.5px solid #B98EEB;
-  background: #fff;
+  border: 1px solid rgba(197, 123, 87, 0.5);
+  background: #FFFFFF;
   display: flex;
   padding: 10px 13px;
   font-size: 16px;
@@ -259,22 +237,51 @@ main button, #small-screen-menu button {
   width: fit-content;
 }
 
-main button > span {
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background: #F9F2EE;
+}
+
+button:active {
+  background: #F3E5DD;
+}
+
+button > span {
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  color: #633E2C;
   margin-top: 1px;
 }
-/* =============================== */
+
 
 /* --------------------
          FOOTER
 -------------------- */
 footer {
-  background: #787878;
+  background: #170b24;
   text-align: center;
   color: white;
   height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
+  display: flex;
+  gap: 16px;
+}
+
+footer div {
+  cursor: pointer;
+}
+
+footer span {
+  cursor: default;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
 }
 
 /* --------------------
@@ -292,7 +299,6 @@ footer {
   align-items: center;
   z-index: 9999;
 }
-
 
 .loader {
   border: 4px solid #f3f3f3;
@@ -365,7 +371,7 @@ li {
 
 #contact-popup > div > h2 {
   text-align: center;
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #262626;
@@ -381,7 +387,7 @@ li {
 
 #contact-popup > div > form > section > p {
   color: #262626;
-  font-family: Nunito;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -394,7 +400,7 @@ li {
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   padding-left: 12px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 16px;
 }
 
@@ -404,7 +410,7 @@ li {
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   padding: 14px 0px 0px 12px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 16px;
 }
 
@@ -415,7 +421,7 @@ li {
   background: #731dd8;
   padding: 8px 16px;
   color: #fff;
-  font-family: Nunito;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 16px;
   border: none;
 }
@@ -428,7 +434,7 @@ li {
   background: #b283ea;
 }
 
-#contact-button {
+.contact-button {
   cursor: pointer;
 }
 

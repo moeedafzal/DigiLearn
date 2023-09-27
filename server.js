@@ -12,7 +12,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Defining API endpoints
-app.use("/get-modules", require("./api/get-modules.js"));
 app.use("/get-page-data", require("./api/get-page-data.js"));
 app.use("/edit-page-data", require("./api/edit-page-data.js"));
 app.use("/insert_contact_information", require("./api/insert_contact_information.js"));
@@ -24,6 +23,18 @@ app.get('/pages', (req, res) => {
 
 app.get('/edit-page', (req, res) => {
   res.sendFile(__dirname + '/public/edit-page.html');
+});
+
+app.get('/privacy-policy', (req, res) => {
+  res.sendFile(__dirname + '/public/privacy-policy.html');
+});
+
+// app.use((req, res, next) => {
+//   res.status(404).sendFile(__dirname + '/404.html');
+// });
+
+app.get('*', function(req, res){
+  res.status(404).sendFile(__dirname + '/public/404.html');
 });
 
 // Initiates our site on Port 3000

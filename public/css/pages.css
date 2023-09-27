@@ -1,20 +1,21 @@
 body {
-  background: #F1E8FB;
-  font-family: "Roboto";
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+  background: #FFF;
 }
 
 main {
-  padding-top: 50px;
+  padding: 2.5em 7em 6em 7em;
+  display: flex;
+  gap: 32px
 }
 
 /* Heading */
 h1 {
-  margin-top: 44px;
-  margin-bottom: 67px;
+  margin-bottom: 32px;
   color: #000;
   font-size: 34px;
   line-height: normal;
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
 h2 {
@@ -22,7 +23,7 @@ h2 {
   font-size: 24px;
   line-height: normal;
   color: #000;
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
 /* Header image */
@@ -35,7 +36,7 @@ h3 {
   font-size: 20px;
   line-height: normal;
   color: #000;
-  font-family: "Nunito";
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
 figure {
@@ -49,14 +50,108 @@ blockquote {
   margin: auto;
 }
 
-section > section {
+#small-screen-side-bar {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  left: -100%;
+  top: 52px;
+  transition: left 0.75s ease-in-out;
+  padding-top: 2.5em;
+  padding-left: 1em;
+}
+
+#small-screen-side-bar > img {
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+#small-screen-side-bar > div {
+  width: fit-content;
+}
+
+main > div {
+  display: none;
+}
+
+main > div > img {
+  display: block;
+  margin-bottom: 32px;
+  cursor: pointer;
+}
+
+aside {
+  min-width: fit-content;
+  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+}
+
+aside > a > span, main > div > a > span {
+  cursor: pointer;
+  display: inline-flex;
+  color: #545454;
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+main > div > a > span { 
+  margin-bottom: 40px;
+}
+
+aside > a > span:hover, main > div > a > span:hover {
+  color: #A289C0;
+}
+
+aside > a > span:active, main > div > a > span:active {
+  color: #731DD8;
+}
+
+aside > a > span > img, main > div > a > span > img {
+  margin-bottom: 2px;
+}
+
+aside > div > div, #small-screen-side-bar > div > div {
+  cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(184, 184, 184, 0.5);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+aside > div > div:hover, #small-screen-side-bar > div > div:hover {
+  border: 1px solid #E4D0FC;
+  background: #F8F4FD;
+}
+
+aside > div > div:hover span, #small-screen-side-bar > div > div:hover span {
+  color: #8A43DE;
+}
+
+aside > div > div:active, #small-screen-side-bar > div > div:active {
+  border: 1px solid #731DD8;
+  background: #F1E8FB;
+}
+
+aside > div > div > span, #small-screen-side-bar > div > div > span {
+  color: #545454;
+  font-size: 12px;
+  margin-left: 2px
+}
+
+.active-page, #small-screen-side-bar .active-page {
+  background: #F1E8FB;
+  border: 1px solid #731DD8;
+}
+
+.active-page span, #small-screen-side-bar .active-page span {
+  color: #731DD8;
 }
 
 blockquote > i {
   font-style: italic;
-  font-family: "Roboto";
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   display: block;
   color: #36827F;
   line-height: 20px;
@@ -68,21 +163,16 @@ blockquote > i {
 blockquote > cite {
   align-self: flex-end;
   color: #393939;
-  font-family: "Roboto";
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 20px;
 }
 
-nav > div {
-  width: 135px;
-}
-
-
 section > div {
-  background: #fff;
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.10);;
+  background: #FFFCF4;
   border-radius: 10px;
+  border: 1px solid rgba(197, 123, 87, 0.5);
   padding: 60px;
   font-size: 16px;
   line-height: 20px;
@@ -121,14 +211,43 @@ section > div > section > button:nth-child(2) {
   display: none;
 }
 
-@media screen and (max-width: 576px) {
-  section > div {
-    padding-left: 30px;
-    padding-right: 30px;
+@media screen and (max-width: 1024px) {
+  main {
+    padding-left: 3em;
+    padding-right: 3em;
   }
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  @media screen and (max-width: 768px) {
+
+    main {
+      display: block;
+    }
+
+    main > div {
+      display: block;
+    }
+
+    aside {
+      display: none;
+    }
+    
+    @media screen and (max-width: 576px) {
+  
+      main {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+      
+      section > div {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+    }
   }
 }
+

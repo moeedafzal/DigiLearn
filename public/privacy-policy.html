@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>digilearn</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/privacy-policy.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Nav Section -->
+      <nav>
+        <a href="index.html">
+          <img src="/img/logo.svg" alt="digilearn" />
+        </a>
+        <div>
+          <span><a href="index.html">Home</a></span>
+          <span class="contact-button">Contact</span>
+        </div>
+        <span id="open-menu-button"
+          ><img src="/img/hamburger.svg" alt="Open Menu Button"
+        /></span>
+      </nav>
+    </header>
+
+    <!-- Hamburger menu -->
+    <div id="small-screen-menu">
+      <div>
+        <a href="index.html">Home</a>
+        <a id="contact-menu-button">Contact</a>
+      </div>
+    </div>
+
+    <!-- Contact popup -->
+    <div id="contact-popup">
+      <div>
+        <img id="close-button" src="/img/cross-black.svg" alt="Close Button" />
+        <h2>Contact us</h2>
+        <form>
+          <section>
+            <p>Your name</p>
+            <input name="name" type="text" placeholder="Enter name here" />
+          </section>
+          <section>
+            <p>Email address*</p>
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter email here"
+              required
+            />
+          </section>
+          <section>
+            <p>Your message*</p>
+            <textarea
+              name="message"
+              placeholder="Enter message here"
+              required
+            ></textarea>
+          </section>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <main>
+      <h1>Privacy Policy</h1>
+
+      <h2>Introduction</h2>
+      <p>
+        Welcome to digilearn. At digilearn, we are committed to protecting your
+        privacy. This Privacy Policy is designed to help you understand how we
+        collect, use, disclose, and safeguard your personal information. By
+        using the Website, you consent to the practices described in this
+        Privacy Policy.
+      </p>
+
+      <h2>Information We Collect</h2>
+      <p>
+        We may collect the following types of information when you use our
+        Website:
+      </p>
+      <br />
+      <ul>
+        <li>
+          Personal Information: We may collect personal information such as your
+          name, email address, and any other information you provide when you
+          contact us or subscribe to our newsletter.
+        </li>
+        <li>
+          Usage Information: We collect non-personal information about how you
+          use our Website. This includes information about your device, browser,
+          and your interactions with the Website.
+        </li>
+        <li>
+          Cookies: We use cookies and similar technologies to collect
+          information about your browsing activities. You can control the use of
+          cookies through your browser settings.
+        </li>
+      </ul>
+
+      <h2>How We Use Your Information</h2>
+      <p>
+        We may use the information we collect for various purposes, including:
+      </p>
+      <ul>
+        <li>Providing and maintaining the Website.</li>
+        <li>Responding to your inquiries and requests.</li>
+        <li>
+          Sending you newsletters or updates if you have subscribed to them.
+        </li>
+        <li>Analyzing Website usage to improve our content and services.</li>
+      </ul>
+
+      <h2>Disclosure of Your Information</h2>
+      <p>
+        We may share your personal information with third parties in the
+        following circumstances:
+      </p>
+      <ul>
+        <li>With your consent.</li>
+        <li>To comply with legal obligations.</li>
+        <li>To protect our rights, privacy, safety, or property.</li>
+        <li>
+          In connection with a business transaction, such as a merger, sale, or
+          acquisition.
+        </li>
+      </ul>
+
+      <h2>Third-Party Links</h2>
+      <p>
+        Our Website may contain links to third-party websites or services that
+        are not operated by us. We have no control over and assume no
+        responsibility for the content, privacy policies, or practices of any
+        third-party sites or services. We encourage you to review the privacy
+        policies of these websites.
+      </p>
+
+      <h2>Data Security</h2>
+      <p>
+        We take reasonable measures to protect your personal information, but no
+        method of transmission over the internet or electronic storage is
+        completely secure. Therefore, we cannot guarantee its absolute security.
+      </p>
+
+      <h2>Your Choices</h2>
+      <p>
+        You can opt-out of receiving newsletters or other communications from us
+        by following the instructions provided in those communications. You can
+        also contact us to update or delete your personal information.
+      </p>
+
+      <h2>Changes to this Privacy Policy</h2>
+      <p>
+        We may update our Privacy Policy from time to time. Any changes will be
+        posted on this page with a revised effective date. We encourage you to
+        review this Privacy Policy periodically for any updates.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions or concerns about this Privacy Policy, please
+        contact us.
+      </p>
+    </main>
+
+    <footer>
+      <div><a href="index.html">Home</a></div>
+      <span>|</span>
+      <div class="contact-button">Contact</div>
+      <span>|</span>
+      <div>
+        <a href="privacy-policy.html"> Privacy Policy </a>
+      </div>
+    </footer>
+
+    <!-- Loading javascript scripts -->
+    <script src="./scripts/utils.js" type="module"></script>
+    <script src="./scripts/contact.js" type="module"></script>
+    <script src="./scripts/menu.js" type="module"></script>
+  </body>
+</html>

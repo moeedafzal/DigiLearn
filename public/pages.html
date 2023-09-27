@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans&family=Nunito:wght@500&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -25,7 +25,7 @@
         </a>
         <div>
           <span><a href="index.html">Home</a></span>
-          <span id="contact-button">Contact</span>
+          <span class="contact-button">Contact</span>
         </div>
         <span id="open-menu-button"
           ><img src="/img/hamburger.svg" alt="Open Menu Button"
@@ -73,25 +73,40 @@
       </div>
     </div>
 
-    <main>
-      <section>
-        <section>
-          <!-- Button exiting back to homepage -->
-          <button id="back-to-course-button">
-            <img src="/img/back-arrow.svg" /><span>Back to course</span>
-          </button>
-          <!-- Edit page button if admin mode is active -->
-          <button id="edit-page-button">
-            <img src="/img/edit.svg" /><span>Edit Page</span>
-          </button>
-        </section>
+    <!-- Small Screen Side Bar -->
+    <div id="small-screen-side-bar">
+      <img id="close-side-bar-button" src="/img/sidebar-icon.svg" alt="sidebar icon" width="32" height="32">
+      <div id="page-navigation-side-bar">
+      </div>
+    </div>
 
-        <!-- Module title -->
-        <h1 id="page-title"></h1>
-      </section>
+    <main>
+      <div>
+        <a href="index.html">
+          <span>
+            <img src="/img/back.svg" height="12" alt="back" /><span
+              >Back to home</span
+            >
+          </span>
+        </a>
+        <img id="open-side-bar-button" src="/img/sidebar-icon.svg" alt="sidebar icon" width="32" height="32">
+      </div>
+
+      <aside>
+        <a href="index.html">
+          <span>
+            <img src="/img/back.svg" height="12" alt="back" /><span
+              >Back to home</span
+            >
+          </span>
+        </a>
+        <div id="page-navigation-section"></div>
+      </aside>
 
       <section>
         <div id="main">
+          <!-- Module title -->
+          <h1 id="page-title"></h1>
           <!-- Module content -->
           <div id="page-content"></div>
           <section>
@@ -108,10 +123,19 @@
     </main>
 
     <footer>
-      <p>© digilearn.pro</p>
+      <div><a href="index.html">Home</a></div>
+      <span>|</span>
+      <div class="contact-button">Contact</div>
+      <span>|</span>
+      <div>
+        <a href="privacy-policy.html"> Privacy Policy </a>
+      </div>
     </footer>
+
+    <!-- Loading javascript scripts -->
     <script src="./scripts/utils.js" type="module"></script>
     <script src="./scripts/pages.js" type="module"></script>
+    <script src="./scripts/side-bar.js" type="module"></script>
     <script src="./scripts/contact.js" type="module"></script>
     <script src="./scripts/menu.js" type="module"></script>
   </body>

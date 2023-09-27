@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Noto+Sans&family=Nunito:wght@500&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -26,7 +26,7 @@
         </a>
         <div>
           <span><a href="index.html">Home</a></span>
-          <span id="contact-button">Contact</span>
+          <span class="contact-button">Contact</span>
         </div>
         <span id="open-menu-button"
           ><img src="/img/hamburger.svg" alt="Open Menu Button"
@@ -82,7 +82,8 @@
         </button>
         <h1 id="page-title"></h1>
         <!-- text area displaying html which can be changed -->
-        <textarea id="page-content-container" name="page-content" rows="50"> </textarea>
+        <textarea id="page-content-container" name="page-content" rows="50">
+        </textarea>
       </section>
       <div>
         <!-- save changes from this button -->
@@ -93,8 +94,16 @@
     </main>
 
     <footer>
-      <p>© digilearn.pro</p>
+      <div><a href="index.html">Home</a></div>
+      <span>|</span>
+      <div class="contact-button">Contact</div>
+      <span>|</span>
+      <div>
+        <a href="privacy-policy.html"> Privacy Policy </a>
+      </div>
     </footer>
+
+    <!-- Loading javascript scripts -->
     <script src="./scripts/utils.js" type="module"></script>
     <script src="./scripts/edit-page.js" type="module"></script>
     <script src="./scripts/contact.js" type="module"></script>
