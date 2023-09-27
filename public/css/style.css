@@ -385,7 +385,7 @@ li {
   gap: 20px;
 }
 
-#contact-popup > div > form > section > p {
+#contact-popup > div > form > div > p {
   color: #262626;
   font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 14px;
@@ -394,7 +394,7 @@ li {
   line-height: 22px;
 }
 
-#contact-popup > div > form > section > input {
+#contact-popup > div > form > div > input {
   height: 40px;
   width: calc(100% - 16px);
   border-radius: 4px;
@@ -404,7 +404,7 @@ li {
   font-size: 16px;
 }
 
-#contact-popup > div > form > section > textarea {
+#contact-popup > div > form > div > textarea {
   height: 80px;
   width: calc(100% - 16px);
   border-radius: 4px;
