@@ -16,23 +16,21 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-414VTNV1FF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-414VTNV1FF");
+    </script>
   </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-414VTNV1FF"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-414VTNV1FF");
-  </script>
-
   <body>
     <header>
       <!-- Nav Section -->
@@ -94,7 +92,9 @@
       <section>
         <!-- Button for exiting back to pages.html page -->
         <button id="back-to-page-button">
-          <img src="/img/back-arrow.svg" alt="Back to Page Button" /><span>Back to page</span>
+          <img src="/img/back-arrow.svg" alt="Back to Page Button" /><span
+            >Back to page</span
+          >
         </button>
         <h1 id="page-title"></h1>
         <!-- text area displaying html which can be changed -->
