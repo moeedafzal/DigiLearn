@@ -9,6 +9,10 @@ const pageNavigationSection = document.getElementById(
   "page-navigation-section"
 );
 
+const pageNavigationSideBar = document.getElementById(
+  "page-navigation-side-bar"
+);
+
 // If in DevMode "Edit Page" button is visible
 if (isDevMode) {
   const editPageButton = document.getElementById("edit-page-button");
@@ -17,13 +21,6 @@ if (isDevMode) {
     window.location.href = `/edit-page?pageNumber=${pageNumber}`;
   });
 }
-
-// Button exiting back to homepage
-document
-  .getElementById("back-to-course-button")
-  .addEventListener("click", function () {
-    window.location.href = "index.html";
-  });
 
 document.addEventListener("DOMContentLoaded", function () {
   startLoader();
@@ -76,9 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
       res.data.all_pages_data.forEach((page) => {
         const pageDiv = document.createElement("div");
 
-        pageDiv.addEventListener("click", function () {
+        function handlePageClick() {
           window.location.href = `pages?pageNumber=${page.page_number}`;
-        });
+        }
+
+        pageDiv.addEventListener("click", handlePageClick);
 
         const image = document.createElement("img");
         image.src = "/img/stars.svg";
@@ -89,13 +88,17 @@ document.addEventListener("DOMContentLoaded", function () {
           image.src = "/img/stars-purple.svg";
         }
 
-        
         const pageTitle = document.createElement("span");
         pageTitle.innerHTML = page.title;
 
         pageDiv.appendChild(image);
         pageDiv.appendChild(pageTitle);
         pageNavigationSection.appendChild(pageDiv);
+
+        // Cloning the pageDiv and adding the event listener to the cloned element
+        const clonedPageDiv = pageDiv.cloneNode(true);
+        clonedPageDiv.addEventListener("click", handlePageClick);
+        pageNavigationSideBar.appendChild(clonedPageDiv);
       });
 
       document.getElementById("main").style.display = "block";

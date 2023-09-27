@@ -73,13 +73,33 @@
       </div>
     </div>
 
+    <!-- Small Screen Side Bar -->
+    <div id="small-screen-side-bar">
+      <img id="close-side-bar-button" src="/img/sidebar-icon.svg" alt="sidebar icon" width="32" height="32">
+      <div id="page-navigation-side-bar">
+      </div>
+    </div>
+
     <main>
+      <div>
+        <a href="index.html">
+          <span>
+            <img src="/img/back.svg" height="12" alt="back" /><span
+              >Back to home</span
+            >
+          </span>
+        </a>
+        <img id="open-side-bar-button" src="/img/sidebar-icon.svg" alt="sidebar icon" width="32" height="32">
+      </div>
+
       <aside>
-        <span id="back-to-course-button">
-          <img src="/img/back.svg" height="12px" alt="back" /><span
-            >Back to home</span
-          >
-        </span>
+        <a href="index.html">
+          <span>
+            <img src="/img/back.svg" height="12" alt="back" /><span
+              >Back to home</span
+            >
+          </span>
+        </a>
         <div id="page-navigation-section"></div>
       </aside>
 
@@ -115,6 +135,7 @@
     <!-- Loading javascript scripts -->
     <script src="./scripts/utils.js" type="module"></script>
     <script src="./scripts/pages.js" type="module"></script>
+    <script src="./scripts/side-bar.js" type="module"></script>
     <script src="./scripts/contact.js" type="module"></script>
     <script src="./scripts/menu.js" type="module"></script>
   </body>
