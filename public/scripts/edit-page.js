@@ -1,12 +1,12 @@
 // Take the page id out from the router query
 const routerQueries = window.location.href.split("?")[1];
-const pageId = routerQueries.split("&")[0];
+const pageNumber = routerQueries.split("&")[0];
 
 // Button to exit back to page.html
 document
   .getElementById("back-to-page-button")
   .addEventListener("click", function () {
-    window.location.href = `/pages?${pageId}`;
+    window.location.href = `/pages.html?${pageNumber}`;
   });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fetching data of the requested module
   async function editPageData() {
     try {
-      const response = await fetch(`/get-page-data?${pageId}`);
+      const response = await fetch(`/get-page-data?${pageNumber}`);
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            pageId: pageId.split("=")[1],
+            pageId: pageNumber.split("=")[1],
             content: content,
           }),
         })

@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (parseInt(pageNumber) > 1) {
         backPageButton.addEventListener("click", function () {
           // Adding a link of previous page
-          window.location.href = `pages?pageNumber=${parseInt(pageNumber) - 1}`;
+          window.location.href = `pages.html?pageNumber=${parseInt(pageNumber) - 1}`;
         });
       } else {
         backPageButton.style.display = "none";
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         parseInt(res.data.last_page_number) > parseInt(pageNumber)
       ) {
         nextPageButton.addEventListener("click", function () {
-          window.location.href = `pages?pageNumber=${parseInt(pageNumber) + 1}`;
+          window.location.href = `pages.html?pageNumber=${parseInt(pageNumber) + 1}`;
         });
       } else {
         nextPageButton.style.display = "none";
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const pageDiv = document.createElement("div");
 
         function handlePageClick() {
-          window.location.href = `pages?pageNumber=${page.page_number}`;
+          window.location.href = `pages.html?pageNumber=${page.page_number}`;
         }
 
         pageDiv.addEventListener("click", handlePageClick);

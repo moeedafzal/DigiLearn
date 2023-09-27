@@ -15,10 +15,6 @@ button:active {
   background: #8F4AE0;
 }
 
-a {
-  display: inline-block;
-}
-
 main > section:nth-child(1) {
   display: flex;
   justify-content: space-between;
@@ -40,7 +36,7 @@ main > section:nth-child(1) > div > p {
   font-weight: 400;
 }
 
-main > section:nth-child(1) > div > a {
+main > section:nth-child(1) > div > button {
   margin-top: 40px;
 }
 
@@ -75,7 +71,8 @@ main > section:nth-child(2) > div {
   flex-wrap: wrap;
 }
 
-main > section:nth-child(2) > a {
+main > section:nth-child(2) > button {
+  margin: 0 auto;
   margin-top: 56px;
 }
 
