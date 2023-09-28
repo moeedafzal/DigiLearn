@@ -39,6 +39,10 @@ img {
   max-width: 100%;
 }
 
+strong {
+  font-weight: 600;
+}
+
 figure {
   text-align: center;
 }
@@ -192,9 +196,13 @@ section > div {
   text-decoration: underline;
 }
 
+#page-content > div > span > div {
+  margin: 16px 0;
+}
+
 /* please write what this is */
 #page-content > div > span > a,
-#page-content > div > p > a {
+#page-content > div > span > div > a {
   color: #000;
   text-decoration: none;
 }
