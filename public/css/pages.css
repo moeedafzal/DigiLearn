@@ -1,12 +1,12 @@
 body {
-  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
-  background: #FFF;
+  font-family: "Montserrat", Verdana, Geneva, sans-serif;
+  background: #fff;
 }
 
 main {
   padding: 2.5em 7em 6em 7em;
   display: flex;
-  gap: 32px
+  gap: 32px;
 }
 
 /* Heading */
@@ -62,17 +62,17 @@ blockquote {
   left: -100%;
   top: 52px;
   transition: left 0.75s ease-in-out;
-  padding-top: 2.5em;
-  padding-left: 1em;
+  overflow: auto;
 }
 
 #small-screen-side-bar > img {
   cursor: pointer;
-  margin-bottom: 40px;
+  margin: 40px 0 40px 16px;
 }
 
 #small-screen-side-bar > div {
   width: fit-content;
+  margin-left: 16px;
 }
 
 main > div {
@@ -90,7 +90,8 @@ aside {
   font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
 }
 
-aside > a > span, main > div > a > span {
+aside > a > span,
+main > div > a > span {
   cursor: pointer;
   display: inline-flex;
   color: #545454;
@@ -99,23 +100,27 @@ aside > a > span, main > div > a > span {
   margin-bottom: 20px;
 }
 
-main > div > a > span { 
+main > div > a > span {
   margin-bottom: 40px;
 }
 
-aside > a > span:hover, main > div > a > span:hover {
-  color: #A289C0;
+aside > a > span:hover,
+main > div > a > span:hover {
+  color: #a289c0;
 }
 
-aside > a > span:active, main > div > a > span:active {
-  color: #731DD8;
+aside > a > span:active,
+main > div > a > span:active {
+  color: #731dd8;
 }
 
-aside > a > span > img, main > div > a > span > img {
+aside > a > span > img,
+main > div > a > span > img {
   margin-bottom: 2px;
 }
 
-aside > div > div, #small-screen-side-bar > div > div {
+aside > div > div,
+#small-screen-side-bar > div > div {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -124,39 +129,45 @@ aside > div > div, #small-screen-side-bar > div > div {
   padding: 12px;
 }
 
-aside > div > div:hover, #small-screen-side-bar > div > div:hover {
-  border: 1px solid #E4D0FC;
-  background: #F8F4FD;
+aside > div > div:hover,
+#small-screen-side-bar > div > div:hover {
+  border: 1px solid #e4d0fc;
+  background: #f8f4fd;
 }
 
-aside > div > div:hover span, #small-screen-side-bar > div > div:hover span {
-  color: #8A43DE;
+aside > div > div:hover span,
+#small-screen-side-bar > div > div:hover span {
+  color: #8a43de;
 }
 
-aside > div > div:active, #small-screen-side-bar > div > div:active {
-  border: 1px solid #731DD8;
-  background: #F1E8FB;
+aside > div > div:active,
+#small-screen-side-bar > div > div:active {
+  border: 1px solid #731dd8;
+  background: #f1e8fb;
 }
 
-aside > div > div > span, #small-screen-side-bar > div > div > span {
+aside > div > div > span,
+#small-screen-side-bar > div > div > span {
   color: #545454;
   font-size: 12px;
-  margin-left: 2px
+  margin-left: 2px;
 }
 
-.active-page, #small-screen-side-bar .active-page {
-  background: #F1E8FB;
-  border: 1px solid #731DD8;
+.active-page,
+#small-screen-side-bar .active-page {
+  background: #f1e8fb;
+  border: 1px solid #731dd8;
 }
 
-.active-page span, #small-screen-side-bar .active-page span {
-  color: #731DD8;
+.active-page span,
+#small-screen-side-bar .active-page span {
+  color: #731dd8;
 }
 
 blockquote > i {
   font-style: italic;
   display: block;
-  color: #C57B57;
+  color: #c57b57;
   line-height: 24px;
   font-weight: 400;
   font-size: 16px;
@@ -179,7 +190,7 @@ section {
 }
 
 section > div {
-  background: #FFFCF4;
+  background: #fffcf4;
   border-radius: 10px;
   border: 1px solid rgba(197, 123, 87, 0.5);
   padding: 60px;
@@ -198,7 +209,7 @@ section > div {
 #page-content > div > span {
   display: block;
   margin-top: 16px;
-  color: #C57B57;
+  color: #c57b57;
   font-weight: 600;
   text-decoration: underline;
 }
@@ -235,7 +246,6 @@ section > div > div:nth-child(3) > button:nth-child(2) {
   }
 
   @media screen and (max-width: 768px) {
-
     main {
       display: block;
     }
@@ -247,19 +257,18 @@ section > div > div:nth-child(3) > button:nth-child(2) {
     aside {
       display: none;
     }
-    
+
     @media screen and (max-width: 576px) {
-  
       main {
         padding-left: 2em;
         padding-right: 2em;
       }
-      
+
       section > div {
         padding-left: 30px;
         padding-right: 30px;
       }
-    
+
       h1 {
         font-size: 24px;
         margin-bottom: 20px;
@@ -267,4 +276,3 @@ section > div > div:nth-child(3) > button:nth-child(2) {
     }
   }
 }
-
