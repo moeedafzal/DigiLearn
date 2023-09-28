@@ -182,19 +182,21 @@ section > div {
 }
 
 #page-content > div {
+  color: #000;
   margin-bottom: 44px;
 }
 
 #page-content > div > span {
   display: block;
   margin-top: 16px;
-  margin-bottom: 16px;
+  color: #C57B57;
+  font-weight: 700;
 }
 
 /* please write what this is */
 #page-content > div > span > a,
 #page-content > div > p > a {
-  color: #731dd8;
+  color: #000;
   text-decoration: none;
 }
 
