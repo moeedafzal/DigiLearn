@@ -181,29 +181,29 @@ section > div {
   display: none;
 }
 
-section > div > div > section {
+#page-content > div {
   margin-bottom: 44px;
 }
 
-section > div > div > section > span {
+#page-content > div > span {
   display: block;
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
 /* please write what this is */
-section > div > div > section > span > a,
-section > div > div > section > p > a {
+#page-content > div > span > a,
+#page-content > div > p > a {
   color: #731dd8;
   text-decoration: none;
 }
 
-section > div > section {
+section > div > div:nth-child(3) {
   display: flex;
   justify-content: space-between;
 }
 
-section > div > section > button:nth-child(2) {
+section > div > div:nth-child(3) > button:nth-child(2) {
   margin-left: auto;
 }
 

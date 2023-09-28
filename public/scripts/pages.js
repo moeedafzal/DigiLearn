@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Setting Page title
       document.getElementById("page-title").innerHTML = res.data.page_title;
 
-      document.getElementById("page-content").innerHTML = res.data.page_content;
+      document.getElementById("page-content").innerHTML = pageContent;
       // Page navigation buttons
       const backPageButton = document.getElementById("back-button");
       const nextPageButton = document.getElementById("next-button");
