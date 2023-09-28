@@ -190,7 +190,8 @@ section > div {
   display: block;
   margin-top: 16px;
   color: #C57B57;
-  font-weight: 700;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 /* please write what this is */
