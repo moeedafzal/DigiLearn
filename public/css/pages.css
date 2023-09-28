@@ -171,6 +171,13 @@ blockquote > cite {
   line-height: 24px;
 }
 
+section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 section > div {
   background: #FFFCF4;
   border-radius: 10px;
@@ -218,6 +225,7 @@ section > div > div:nth-child(3) > button:nth-child(2) {
 
 #edit-page-button {
   display: none;
+  align-self: flex-end;
 }
 
 @media screen and (max-width: 1024px) {

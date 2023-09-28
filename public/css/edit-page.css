@@ -1,20 +1,56 @@
-main > div {
-  display: flex;
-  justify-content: end;
+body {
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+  background: #FFF;
 }
 
+main {
+  padding: 2.5em 7em 6em 7em;
+}
 
-main > div > button {
-  display: none;
+/* Heading */
+h1 {
+  margin: 32px 0;
+  color: #000;
+  font-size: 26px;
+  line-height: normal;
+  font-weight: 600;
+}
+
+main div {
+  width: 100%;
+}
+
+/* select last div in main */
+main div:last-child {
+  display: flex;
+  justify-content: flex-end;
 }
 
 #page-content-container {
+  display: none;
   width: 100%;
-  margin-bottom: 44px;
+  margin-bottom: 32px;
+}
+
+#save-button {
   display: none;
 }
 
-section > section {
-  display: flex;
-  justify-content: space-between;
+@media screen and (max-width: 1024px) {
+  main {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+    
+    @media screen and (max-width: 576px) {
+  
+      main {
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+    
+      h1 {
+        font-size: 24px;
+      }
+    }
 }
