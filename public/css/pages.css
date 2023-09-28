@@ -13,9 +13,9 @@ main {
 h1 {
   margin-bottom: 32px;
   color: #000;
-  font-size: 34px;
+  font-size: 26px;
   line-height: normal;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-weight: 600;
 }
 
 h2 {
@@ -23,7 +23,7 @@ h2 {
   font-size: 24px;
   line-height: normal;
   color: #000;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-weight: 600;
 }
 
 /* Header image */
@@ -36,7 +36,7 @@ h3 {
   font-size: 20px;
   line-height: normal;
   color: #000;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-weight: 600;
 }
 
 figure {
@@ -151,10 +151,9 @@ aside > div > div > span, #small-screen-side-bar > div > div > span {
 
 blockquote > i {
   font-style: italic;
-  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   display: block;
-  color: #36827F;
-  line-height: 20px;
+  color: #C57B57;
+  line-height: 24px;
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 14px;
@@ -163,10 +162,9 @@ blockquote > i {
 blockquote > cite {
   align-self: flex-end;
   color: #393939;
-  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 12px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 24px;
 }
 
 section > div {
