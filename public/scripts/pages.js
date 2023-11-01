@@ -68,34 +68,34 @@ document.addEventListener("DOMContentLoaded", function () {
       // Creating divs for navigation each page
 
       res.data.all_pages_data.forEach((page) => {
-        const pageDiv = document.createElement("div");
+        const pageAnchor = document.createElement("a");
 
         function handlePageClick() {
           window.location.href = `pages.html?pageNumber=${page.page_number}`;
         }
 
-        pageDiv.addEventListener("click", handlePageClick);
+        pageAnchor.addEventListener("click", handlePageClick);
 
         const image = document.createElement("img");
         image.src = "/img/stars.svg";
         image.alt = "stars";
 
         if (page.title === res.data.page_title) {
-          pageDiv.classList.add("active-page");
+          pageAnchor.classList.add("active-page");
           image.src = "/img/stars-purple.svg";
         }
 
         const pageTitle = document.createElement("span");
         pageTitle.innerHTML = page.title;
 
-        pageDiv.appendChild(image);
-        pageDiv.appendChild(pageTitle);
-        pageNavigationSection.appendChild(pageDiv);
+        pageAnchor.appendChild(image);
+        pageAnchor.appendChild(pageTitle);
+        pageNavigationSection.appendChild(pageAnchor);
 
-        // Cloning the pageDiv and adding the event listener to the cloned element
-        const clonedPageDiv = pageDiv.cloneNode(true);
-        clonedPageDiv.addEventListener("click", handlePageClick);
-        pageNavigationSideBar.appendChild(clonedPageDiv);
+        // Cloning the pageAnchor and adding the event listener to the cloned element
+        const clonedPageAnchor = pageAnchor.cloneNode(true);
+        clonedPageAnchor.addEventListener("click", handlePageClick);
+        pageNavigationSideBar.appendChild(clonedPageAnchor);
       });
 
       document.getElementById("main").style.display = "block";

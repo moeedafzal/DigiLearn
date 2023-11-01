@@ -119,7 +119,7 @@ main > div > a > span > img {
   margin-bottom: 2px;
 }
 
-aside > div > div,
+aside > div > a,
 #small-screen-side-bar > div > div {
   cursor: pointer;
   display: flex;
@@ -129,24 +129,24 @@ aside > div > div,
   padding: 12px;
 }
 
-aside > div > div:hover,
+aside > div > a:hover,
 #small-screen-side-bar > div > div:hover {
   border: 1px solid #e4d0fc;
   background: #f8f4fd;
 }
 
-aside > div > div:hover span,
+aside > div > a:hover span,
 #small-screen-side-bar > div > div:hover span {
   color: #8a43de;
 }
 
-aside > div > div:active,
+aside > div > a:active,
 #small-screen-side-bar > div > div:active {
   border: 1px solid #731dd8;
   background: #f1e8fb;
 }
 
-aside > div > div > span,
+aside > div > a > span,
 #small-screen-side-bar > div > div > span {
   color: #545454;
   font-size: 12px;
