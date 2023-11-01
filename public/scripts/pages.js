@@ -79,10 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const image = document.createElement("img");
         image.src = "/img/stars.svg";
         image.alt = "stars";
+        image.width = "12";
+        image.height = "12";
 
         if (page.title === res.data.page_title) {
           pageAnchor.classList.add("active-page");
           image.src = "/img/stars-purple.svg";
+          image.alt = "stars-purple";
+          image.width = "12";
+          image.height = "12";
         }
 
         const pageTitle = document.createElement("span");
