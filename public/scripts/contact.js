@@ -1,4 +1,4 @@
-import { startLoader, stopLoader, closeMenu } from "./utils.js";
+import { closeMenu } from "./utils.js";
 
 const contactButtons = document.querySelectorAll(".contact-button");
 const contactMenuButton = document.getElementById("contact-menu-button");
@@ -22,7 +22,6 @@ closeButton.addEventListener("click", function () {
 });
 
 form.addEventListener("submit", async function (e) {
-  startLoader();
   e.preventDefault();
 
   const formData = new FormData(form);
@@ -43,7 +42,6 @@ form.addEventListener("submit", async function (e) {
       console.error("Error:", error);
     })
     .finally(() => {
-      stopLoader();
       form.reset();
     });
 

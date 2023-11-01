@@ -17,15 +17,3 @@ export function closeMenu() {
   // bringing back scrolling
   body.style.overflow = "auto";
 }
-
-export function startLoader() {
-  const loadingScreen = document.createElement("div");
-  loadingScreen.className = "loading-screen";
-  loadingScreen.innerHTML = '<div class="loader"></div>';
-  body.appendChild(loadingScreen);
-}
-
-export async function stopLoader() {
-  const loadingScreen = document.querySelector(".loading-screen");
-  body.removeChild(loadingScreen);
-}

@@ -1,5 +1,3 @@
-import { startLoader, stopLoader } from "./utils.js";
-
 // Take the page id out from the router query
 const routerQueries = window.location.href.split("?")[1];
 const pageNumber = routerQueries.split("&")[0].split("=")[1];
@@ -23,7 +21,6 @@ if (isDevMode) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  startLoader();
 
   async function getPageData() {
     try {
@@ -104,8 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("main").style.display = "block";
     } catch (error) {
       console.error("There was a problem fetching the page data:", error);
-    } finally {
-      stopLoader();
     }
   }
 
