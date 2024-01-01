@@ -137,6 +137,11 @@ body {
   display: flex;
   flex-direction: column;
   background: #ebecee;
+  line-height: 24px;
+}
+
+h1, h2, h3 {
+  line-height: normal;
 }
 
 /* --------------------
@@ -157,7 +162,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  /* font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif; */
 }
 
 nav > div > span {
@@ -214,6 +218,7 @@ button {
   background: #ec6a2c;
   border: none;
   font-size: 16px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -244,10 +249,6 @@ footer p {
   max-width: 320px;
   margin-top: 40px;
   margin-bottom: 16px;
-}
-
-footer div {
-  cursor: pointer;
 }
 
 footer span {
@@ -459,6 +460,10 @@ li {
     padding: 6em;
   }
 
+  footer {
+    padding: 5em 6em;
+  }
+
   /* for tablet screens we show the hamburger */
   @media screen and (max-width: 768px) {
     nav > div {
@@ -481,6 +486,12 @@ li {
 
       #contact-popup > div {
         width: 288px;
+      }
+
+      footer {
+        padding: 5em 2em;
+        flex-direction: column;
+        gap: 40px;
       }
     }
   }
