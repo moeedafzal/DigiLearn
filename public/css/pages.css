@@ -60,7 +60,7 @@ blockquote {
   height: 100%;
   background-color: #fff;
   left: -100%;
-  top: 52px;
+  top: 80px;
   transition: left 0.75s ease-in-out;
   overflow: auto;
 }

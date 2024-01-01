@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Sanchez&display=swap"
       rel="stylesheet"
     />
     <!-- Google tag (gtag.js) -->
@@ -35,11 +35,20 @@
       <!-- Nav Section -->
       <nav>
         <a href="index.html">
-          <img src="/img/logo.svg" alt="Digilearn Logo" width="98" height="23" />
+          <img
+            src="/img/logo.svg"
+            alt="Digilearn Logo"
+            width="98"
+            height="23"
+          />
         </a>
         <div>
           <span><a href="index.html" class="active">Home</a></span>
+          <span><a href="pages.html?pageNumber=7">UX Design</a></span>
+          <span><a href="pages.html?pageNumber=11">UI Design</a></span>
+          <span><a href="pages.html?pageNumber=15">Project Briefs</a></span>
           <span class="contact-button">Contact</span>
+          <button class="get-started-button">Get Started</button>
         </div>
         <span id="open-menu-button"
           ><img src="/img/hamburger.svg" alt="Menu icon" width="17" height="17"
@@ -59,7 +68,13 @@
     <!-- Contact popup -->
     <div id="contact-popup">
       <div>
-        <img id="close-button" src="/img/cross-black.svg" alt="Close Button" width="13" height="13" />
+        <img
+          id="close-button"
+          src="/img/cross-black.svg"
+          alt="Close Button"
+          width="13"
+          height="13"
+        />
         <h2>Contact us</h2>
         <form>
           <div>
@@ -87,53 +102,85 @@
         </form>
       </div>
     </div>
+
+    <!-- Background Image -->
+    <img
+      id="background-image"
+      src="/img/background-image.png"
+      alt="A young woman working on her laptop with a cup of coffee"
+      height="1280"
+      width="850"
+    />
+
     <main>
       <!-- Intro Section -->
       <section>
-        <div>
-          <h1>Embark on your mobile application design journey</h1>
-          <p>Unlock the world of mobile app design from strategy to success</p>
-          <button class="get-started-button">Get Started</button>
-        </div>
-        <img src="/img/header.svg" alt="illustration of a designer designing an app" width="319" height="318" />
+        <h1>Elevate your career with an online guide to mobile app design</h1>
+        <p>
+          Launch your journey towards success with our comprehensive online
+          guide
+        </p>
+        <button class="get-started-button">Get Started</button>
       </section>
 
       <!-- Requirements Section -->
       <section>
-        <h1>All you need...</h1>
+        <h1>All you need</h1>
         <div>
           <div>
             <img
-              src="/img/pencilpaper.svg"
+              src="/img/pencil-and-paper.png"
               alt="Pencil and Paper"
-              width="99"
-              height="99"
+              width="92"
+              height="92"
             />
             <p>Pencil and paper</p>
           </div>
           <div>
-            <img src="/img/laptop.svg" alt="Laptop" width="94" height="94" />
-            <p>Laptop</p>
+            <img
+              src="/img/laptop-and-internet.png"
+              alt="Laptop"
+              width="92"
+              height="92"
+            />
+            <p>Laptop & Internet</p>
           </div>
           <div>
-            <img src="/img/figma.svg" alt="Figma Logo" width="87" height="97" />
-            <p>Free Figma account</p>
-          </div>
-          <div>
-            <img src="/img/learn.svg" alt="Light Bulb" width="99" height="99" />
-            <p>Desire to Learn</p>
+            <img
+              src="/img/figma-account.png"
+              alt="Figma Logo"
+              width="92"
+              height="92"
+            />
+            <p>Figma account</p>
           </div>
         </div>
         <button class="get-started-button">Get Started</button>
       </section>
+
+      <!-- Modules Section -->
+      <section>
+        <h1>What you'll learn</h1>
+        <div id="module-cards-container"></div>
+      </section>
     </main>
 
     <footer>
-      <div><a href="index.html">Home</a></div>
-      <span>|</span>
-      <div class="contact-button">Contact</div>
-      <span>|</span>
       <div>
+        <img
+          src="/img/digilearn-footer.png"
+          alt="DigiLearn Logo in Footer"
+          width="98"
+          height="24"
+        />
+        <p>Launch your journey towards success with our comprehensive online guide</p>
+        <button class="get-started-button">Get Started</button>
+      </div>
+      <div>
+        <a href="pages.html?pageNumber=7">UX Design</a>
+        <a href="pages.html?pageNumber=11">UI Design</a>
+        <a href="pages.html?pageNumber=15">Project Briefs</a>
+        <a class="contact-button">Contact</a>
         <a href="privacy-policy.html"> Privacy Policy </a>
       </div>
     </footer>
