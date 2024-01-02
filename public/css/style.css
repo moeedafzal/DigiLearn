@@ -140,7 +140,9 @@ body {
   line-height: 24px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: normal;
 }
 
@@ -262,6 +264,11 @@ footer a {
   text-decoration: none;
   display: block;
   margin-bottom: 16px;
+}
+
+/* aligining items to the right */
+footer > div:nth-child(2) {
+  text-align: right;
 }
 
 /* --------------------
@@ -478,6 +485,11 @@ li {
 
     /* for smaller screens we decrease the right left padding further */
     @media screen and (max-width: 576px) {
+      /* aligining items to the left */
+      footer > div:nth-child(2) {
+        text-align: left;
+      }
+
       main {
         padding: 6em 2em;
       }
