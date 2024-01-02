@@ -21,7 +21,6 @@ if (isDevMode) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
   async function getPageData() {
     try {
       // Fetching Page content from database
@@ -47,7 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (parseInt(pageNumber) > 1) {
         backPageButton.addEventListener("click", function () {
           // Adding a link of previous page
-          window.location.href = `pages.html?pageNumber=${parseInt(pageNumber) - 1}`;
+          window.location.href = `pages.html?pageNumber=${
+            parseInt(pageNumber) - 1
+          }`;
         });
       } else {
         backPageButton.style.display = "none";
@@ -59,49 +60,92 @@ document.addEventListener("DOMContentLoaded", function () {
         parseInt(res.data.last_page_number) > parseInt(pageNumber)
       ) {
         nextPageButton.addEventListener("click", function () {
-          window.location.href = `pages.html?pageNumber=${parseInt(pageNumber) + 1}`;
+          window.location.href = `pages.html?pageNumber=${
+            parseInt(pageNumber) + 1
+          }`;
         });
       } else {
         nextPageButton.style.display = "none";
       }
 
-      // Creating divs for navigation each page
+      const allModulesData = {};
 
+      // populating allModulesData with module titles and entry page numbers
       res.data.all_pages_data.forEach((page) => {
-        const pageAnchor = document.createElement("a");
-
-        function handlePageClick() {
-          window.location.href = `pages.html?pageNumber=${page.page_number}`;
+        const moduleTitle = page.module_title;
+        const moduleEntryPageNumber = page.module_entry_page_number;
+        if (moduleTitle && moduleEntryPageNumber) {
+          if (!allModulesData[moduleTitle]) {
+            allModulesData[moduleTitle] = {
+              entryPageNumber: moduleEntryPageNumber,
+              pages: [],
+            };
+          }
+          allModulesData[moduleTitle].pages.push({
+            pageNumber: page.page_number,
+            pageTitle: page.page_title,
+          });
+        } else {
+          if (!allModulesData["Bonus Project Briefs"]) {
+            allModulesData["Bonus Project Briefs"] = {
+              entryPageNumber: page.page_number,
+              pages: [],
+            };
+          }
         }
-
-        pageAnchor.addEventListener("click", handlePageClick);
-
-        const image = document.createElement("img");
-        image.src = "/img/stars.svg";
-        image.alt = "stars";
-        image.width = "12";
-        image.height = "12";
-
-        if (page.title === res.data.page_title) {
-          pageAnchor.classList.add("active-page");
-          image.src = "/img/stars-purple.svg";
-          image.alt = "stars-purple";
-          image.width = "12";
-          image.height = "12";
-        }
-
-        const pageTitle = document.createElement("span");
-        pageTitle.innerHTML = page.title;
-
-        pageAnchor.appendChild(image);
-        pageAnchor.appendChild(pageTitle);
-        pageNavigationSection.appendChild(pageAnchor);
-
-        // Cloning the pageAnchor and adding the event listener to the cloned element
-        const clonedPageAnchor = pageAnchor.cloneNode(true);
-        clonedPageAnchor.addEventListener("click", handlePageClick);
-        pageNavigationSideBar.appendChild(clonedPageAnchor);
       });
+
+      // populating page navigation section with module titles and pages
+      for (const moduleTitle in allModulesData) {
+        const moduleAnchor = document.createElement("a");
+
+        function handleModuleClick() {
+          window.location.href = `pages.html?pageNumber=${allModulesData[moduleTitle].entryPageNumber}`;
+        }
+
+        moduleAnchor.addEventListener("click", handleModuleClick);
+        moduleAnchor.innerHTML = moduleTitle;
+        const pagesSpan = document.createElement("span");
+
+        if (
+          !allModulesData[moduleTitle].pages.length &&
+          parseInt(pageNumber) === parseInt(allModulesData[moduleTitle].entryPageNumber)
+        ) {
+          moduleAnchor.classList.add("active-page");
+        }
+
+        allModulesData[moduleTitle].pages.forEach((page) => {
+          const pageAnchor = document.createElement("a");
+
+          function handlePageClick() {
+            window.location.href = `pages.html?pageNumber=${page.pageNumber}`;
+          }
+
+          pageAnchor.addEventListener("click", handlePageClick);
+
+          if (parseInt(page.pageNumber) === parseInt(pageNumber)) {
+            pageAnchor.classList.add("active-page");
+            moduleAnchor.classList.add("active-page");
+          }
+
+          const pageTitle = document.createElement("span");
+          pageTitle.innerHTML = page.pageTitle;
+
+          pageAnchor.appendChild(pageTitle);
+          pagesSpan.appendChild(pageAnchor);
+        });
+
+        pageNavigationSection.appendChild(moduleAnchor);
+        pageNavigationSection.appendChild(pagesSpan);
+
+        const clonedModuleAnchor = moduleAnchor.cloneNode(true);
+        clonedModuleAnchor.addEventListener("click", handleModuleClick);
+        pageNavigationSideBar.appendChild(clonedModuleAnchor);
+
+        const clonedPagesSpan = pagesSpan.cloneNode(true);
+        clonedPagesSpan.addEventListener("click", handleModuleClick);
+        pageNavigationSideBar.appendChild(clonedPagesSpan);
+      }
 
       document.getElementById("main").style.display = "block";
     } catch (error) {
