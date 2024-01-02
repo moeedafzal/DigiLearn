@@ -113,9 +113,6 @@ main > section:nth-child(3) button {
   border: 0.5px solid #1d1561;
   background: #fff;
   color: #1d1561;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
 @media screen and (max-width: 1024px) {

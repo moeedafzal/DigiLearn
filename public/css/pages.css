@@ -75,6 +75,21 @@ blockquote {
   margin-left: 16px;
 }
 
+main button {
+  background: #fff;
+  border: 1px solid rgba(236, 106, 44, 0.5);
+  border-radius: 8px;
+  gap: 10px;
+}
+
+main button:hover {
+  background: #FDF0EA;
+}
+
+main button:active {
+  background: #F9D2C0;
+}
+
 main > div {
   display: none;
 }
