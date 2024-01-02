@@ -96,9 +96,6 @@ async function appendModulesCards() {
 
     const briefsContainer = document.createElement("div");
     briefsContainer.classList.add("briefs-container");
-    briefsContainer.style.display = "flex";
-    briefsContainer.style.gap = "70px";
-    briefsContainer.style.margin = "28px 0";
 
     bonusBriefs.forEach((brief) => {
       const briefCard = document.createElement("div");

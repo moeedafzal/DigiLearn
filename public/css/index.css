@@ -7,6 +7,12 @@
   z-index: -1;
 }
 
+.briefs-container {
+  display: flex;
+  gap: 70px;
+  margin: 28px 0;
+}
+
 main > section:nth-child(1) {
   width: 60%;
   margin: 100px 0;
@@ -132,6 +138,11 @@ main > section:nth-child(3) button:active {
     main > section:nth-child(2) > div > div {
       flex: 50%;
       margin: 32px 0;
+    }
+
+    .briefs-container {
+      flex-direction: column;
+      gap: 0;
     }
   }
 }
