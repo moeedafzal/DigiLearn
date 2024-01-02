@@ -17,8 +17,9 @@ router.get("/", async (req, res) => {
     FROM pages
     WHERE pages.page_number = ${page_number}`;
 
-    const all_pages_data_query = `SELECT title, page_number
+    const all_pages_data_query = `SELECT pages.title as "page_title", page_number, modules.heading as "module_title", modules.entry_page_number as "module_entry_page_number"
     FROM pages
+    LEFT JOIN modules ON modules.id = pages.module_id
     ORDER BY page_number asc`;
 
     const client = await pool.connect();
@@ -39,9 +40,13 @@ router.get("/", async (req, res) => {
     const last_page_number = allPages[allPages.length - 1].page_number;
     let all_pages_data = [];
     allPages.forEach((page) => {
-      all_pages_data.push({ page_number: page.page_number, title: page.title });
+      all_pages_data.push({
+        page_number: page.page_number,
+        page_title: page.page_title,
+        module_title: page.module_title,
+        module_entry_page_number: page.module_entry_page_number,
+      });
     });
-
 
     const data = {
       page_title,

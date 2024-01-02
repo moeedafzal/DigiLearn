@@ -84,8 +84,9 @@ hr {
 
 main button {
   background: #fff;
-  border: 1px solid rgba(236, 106, 44, 0.5);
-  border-radius: 8px;
+  border: 0.25px solid #633e2c;
+  background: #fff;
+  color: #633e2c;
   gap: 10px;
 }
 
@@ -141,49 +142,38 @@ main > div > a > span > img {
   margin-bottom: 2px;
 }
 
-aside > div > a,
-#small-screen-side-bar > div > div {
+#page-navigation-side-bar p,
+#page-navigation-side-bar span,
+#page-navigation-side-bar a,
+#page-navigation-section p,
+#page-navigation-section span,
+#page-navigation-section a {
+  display: block;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  border: 1px solid rgba(184, 184, 184, 0.5);
-  border-radius: 8px;
-  padding: 12px;
 }
 
-aside > div > a:hover,
-#small-screen-side-bar > div > div:hover {
-  border: 1px solid #e4d0fc;
-  background: #f8f4fd;
-}
-
-aside > div > a:hover span,
-#small-screen-side-bar > div > div:hover span {
-  color: #8a43de;
-}
-
-aside > div > a:active,
-#small-screen-side-bar > div > div:active {
-  border: 1px solid #731dd8;
-  background: #f1e8fb;
-}
-
-aside > div > a > span,
-#small-screen-side-bar > div > div > span {
+#page-navigation-side-bar {
   color: #545454;
-  font-size: 12px;
-  margin-left: 2px;
 }
 
-.active-page,
-#small-screen-side-bar .active-page {
-  background: #f1e8fb;
-  border: 1px solid #731dd8;
+#page-navigation-section {
+  color: #545454;
+  max-width: 280px;
 }
 
-.active-page span,
-#small-screen-side-bar .active-page span {
-  color: #731dd8;
+#page-navigation-side-bar a,
+#page-navigation-section a {
+  margin-bottom: 10px;
+}
+
+#page-navigation-side-bar span,
+#page-navigation-section span {
+  margin-left: 32px;
+}
+
+.active-page {
+  color: #1d1561 !important;
+  font-weight: 600;
 }
 
 blockquote > i {

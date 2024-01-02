@@ -110,9 +110,17 @@ main > section:nth-child(3) p {
 
 main > section:nth-child(3) button {
   align-self: flex-end;
-  border: 0.5px solid #1d1561;
+  border: 0.25px solid #633E2C;
   background: #fff;
-  color: #1d1561;
+  color: #633E2C;
+}
+
+main > section:nth-child(3) button:hover {
+  background: #FDF0EA;
+}
+
+main > section:nth-child(3) button:active {
+  background: #F9D2C0;
 }
 
 @media screen and (max-width: 1024px) {

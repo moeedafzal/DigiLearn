@@ -22,9 +22,9 @@ const bonusBriefs = [
   },
 ];
 
-function getModuleButton(pageNumber) {
+function getModuleButton(pageNumber, buttonText = "See module") {
   const moduleButton = document.createElement("button");
-  moduleButton.innerHTML = "See module";
+  moduleButton.innerHTML = buttonText;
   moduleButton.id = "next-button";
 
   const moduleButtonImage = document.createElement("img");
@@ -118,8 +118,7 @@ async function appendModulesCards() {
       briefsContainer.appendChild(briefCard);
     });
 
-    const moduleButton = getModuleButton(15);
-
+    const moduleButton = getModuleButton(15, "Explore");
     bonusModuleCard.appendChild(bonusModuleTitle);
     bonusModuleCard.appendChild(briefsContainer);
     bonusModuleCard.appendChild(moduleButton);
