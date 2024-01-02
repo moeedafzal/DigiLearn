@@ -132,18 +132,23 @@ table {
 -------------------- */
 body {
   margin: 0;
-  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
+  font-family: "Montserrat", Verdana, Geneva, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #ebecee;
+  background: #fff;
+  line-height: 24px;
+}
+
+h1, h2, h3 {
+  line-height: normal;
 }
 
 /* --------------------
          HEADER
 -------------------- */
 header {
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-family: "Montserrat", Verdana, Geneva, sans-serif;
 }
 
 /* --------------------
@@ -151,45 +156,24 @@ header {
 -------------------- */
 nav {
   padding: 0 7em;
-  background: #170b24;
+  background: #07032a;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 52px;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  height: 80px;
 }
 
-nav > div > a > button {
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+nav > div > span {
+  cursor: pointer;
 }
 
-main {
-  padding: 6em 14em;
-  flex-grow: 1;
+nav > div > span:hover {
+  opacity: 0.7;
 }
 
 a {
   text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:hover,
-#small-screen-menu button:hover {
-  background: #f1e8fb;
-}
-
-button:active,
-#small-screen-menu button:active {
-  background: #e1d5ef;
-}
-
-button > span {
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
-  color: #731dd8;
 }
 
 nav > div {
@@ -197,7 +181,7 @@ nav > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 135px;
+  gap: 35px;
 }
 
 nav > div > span {
@@ -214,6 +198,7 @@ nav a.active {
   padding-bottom: 5px;
   border-bottom: 2px solid #fff;
   border-radius: 1px;
+  font-weight: 600;
 }
 
 /* --------------------
@@ -222,57 +207,50 @@ nav a.active {
 /* main padding */
 main {
   padding: 6em 14em;
+  flex-grow: 1;
 }
 
-
 button {
-  border-radius: 8px;
-  border: 1px solid rgba(197, 123, 87, 0.5);
-  background: #FFFFFF;
-  display: flex;
-  padding: 10px 13px;
+  padding: 10px 20px;
+  color: #fff;
+  background: #ec6a2c;
+  border: none;
   font-size: 16px;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-}
-
-button {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 button:hover {
-  background: #F9F2EE;
+  background: #bd5523;
 }
 
 button:active {
-  background: #F3E5DD;
+  background: #f08856;
 }
 
 button > span {
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
-  color: #633E2C;
+  color: #633e2c;
   margin-top: 1px;
 }
-
 
 /* --------------------
          FOOTER
 -------------------- */
 footer {
-  background: #170b24;
-  text-align: center;
-  color: white;
-  height: 52px;
+  background: #07032a;
+  color: #fff;
+  padding: 5em 14em;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  gap: 16px;
+  justify-content: space-between;
 }
 
-footer div {
-  cursor: pointer;
+footer p {
+  max-width: 320px;
+  margin-top: 40px;
+  margin-bottom: 16px;
 }
 
 footer span {
@@ -282,6 +260,28 @@ footer span {
 footer a {
   color: white;
   text-decoration: none;
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* --------------------
+         nav and footer buttons
+-------------------- */
+
+nav button,
+footer button {
+  border: 1px solid #fff;
+  background: #07032a;
+}
+
+nav button:hover,
+footer button:hover {
+  background: #040215;
+}
+
+nav button:active,
+footer button:active {
+  background: #201c3f;
 }
 
 /* --------------------
@@ -371,7 +371,6 @@ li {
 
 #contact-popup > div > h2 {
   text-align: center;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #262626;
@@ -387,7 +386,6 @@ li {
 
 #contact-popup > div > form > div > p {
   color: #262626;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -400,7 +398,6 @@ li {
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   padding-left: 12px;
-  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 16px;
 }
 
@@ -410,28 +407,11 @@ li {
   border-radius: 4px;
   border: 1px solid #d9d9d9;
   padding: 14px 0px 0px 12px;
-  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 16px;
 }
 
 #contact-popup > div > form > button {
-  align-self: center;
   width: 100%;
-  border-radius: 4px;
-  background: #731dd8;
-  padding: 8px 16px;
-  color: #fff;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
-  font-size: 16px;
-  border: none;
-}
-
-#contact-popup > div > form > button:hover {
-  background: #8f4ae0;
-}
-
-#contact-popup > div > form > button:active {
-  background: #b283ea;
 }
 
 .contact-button {
@@ -450,7 +430,7 @@ li {
   height: 100%;
   background-color: #fff;
   right: -100%;
-  top: 52px;
+  top: 80px;
   transition: right 0.75s ease-in-out;
 }
 
@@ -482,16 +462,12 @@ li {
     padding: 6em;
   }
 
-  /* for smaller screens we decrease the right left padding further */
-  @media screen and (max-width: 576px) {
-    main {
-      padding: 6em 2em;
-    }
+  footer {
+    padding: 5em 6em;
+  }
 
-    nav {
-      padding: 0 2em;
-    }
-
+  /* for tablet screens we show the hamburger */
+  @media screen and (max-width: 768px) {
     nav > div {
       display: none;
     }
@@ -500,8 +476,25 @@ li {
       display: block;
     }
 
-    #contact-popup > div {
-      width: 288px;
+    /* for smaller screens we decrease the right left padding further */
+    @media screen and (max-width: 576px) {
+      main {
+        padding: 6em 2em;
+      }
+
+      nav {
+        padding: 0 2em;
+      }
+
+      #contact-popup > div {
+        width: 288px;
+      }
+
+      footer {
+        padding: 5em 2em;
+        flex-direction: column;
+        gap: 40px;
+      }
     }
   }
 }

@@ -14,6 +14,7 @@ app.use(express.static("public"));
 // Defining API endpoints
 app.use("/get-page-data", require("./api/get-page-data.js"));
 app.use("/edit-page-data", require("./api/edit-page-data.js"));
+app.use("/get-modules-data", require("./api/get-modules-data.js"));
 app.use("/insert_contact_information", require("./api/insert_contact_information.js"));
 
 // Handling requests
@@ -28,10 +29,6 @@ app.get('/edit-page', (req, res) => {
 app.get('/privacy-policy', (req, res) => {
   res.sendFile(__dirname + '/public/privacy-policy.html');
 });
-
-// app.use((req, res, next) => {
-//   res.status(404).sendFile(__dirname + '/404.html');
-// });
 
 app.get('*', function(req, res){
   res.status(404).sendFile(__dirname + '/public/404.html');
