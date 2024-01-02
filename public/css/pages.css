@@ -28,9 +28,9 @@ h3 {
   font-weight: 600;
 }
 
-/* Header image */
 img {
   max-width: 100%;
+  height: auto;
 }
 
 strong {
