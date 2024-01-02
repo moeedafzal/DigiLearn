@@ -1,7 +1,6 @@
 import { closeMenu } from "./utils.js";
 
 const contactButtons = document.querySelectorAll(".contact-button");
-const contactMenuButton = document.getElementById("contact-menu-button");
 const contactPopup = document.getElementById("contact-popup");
 const closeButton = document.getElementById("close-button");
 const form = document.getElementsByTagName("form")[0];
@@ -10,11 +9,6 @@ contactButtons.forEach((contactButton) => {
   contactButton.addEventListener("click", function () {
     contactPopup.style.display = "flex";
   });
-});
-
-contactMenuButton.addEventListener("click", function () {
-  closeMenu();
-  contactPopup.style.display = "flex";
 });
 
 closeButton.addEventListener("click", function () {
