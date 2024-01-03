@@ -223,6 +223,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  font-family: "Montserrat", Verdana, Geneva, sans-serif;
 }
 
 button:hover {

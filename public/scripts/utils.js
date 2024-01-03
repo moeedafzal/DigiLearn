@@ -1,6 +1,13 @@
 const openMenuButton = document.getElementById("open-menu-button");
 const smallScreenMenu = document.getElementById("small-screen-menu");
+const getStartedButtons = document.querySelectorAll(".get-started-button");
 const body = document.body;
+
+getStartedButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    window.location.href = `pages.html?pageNumber=1`;
+  });
+});
 
 export function openMenu() {
   smallScreenMenu.style.right = "0";

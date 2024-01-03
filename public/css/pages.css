@@ -110,7 +110,7 @@ main > div > img {
 
 aside {
   min-width: fit-content;
-  font-family: "Nunito", "Rubik", "Poppins", "Raleway", sans-serif;
+  font-family: "Montserrat", Verdana, Geneva, sans-serif;
 }
 
 aside > a > span,
@@ -129,17 +129,21 @@ main > div > a > span {
 
 aside > a > span:hover,
 main > div > a > span:hover {
-  color: #a289c0;
+  color: #000;
 }
 
 aside > a > span:active,
 main > div > a > span:active {
-  color: #731dd8;
+  color: #1d1561;
 }
 
 aside > a > span > img,
 main > div > a > span > img {
   margin-bottom: 2px;
+}
+
+#page-navigation-side-bar {
+  color: #545454;
 }
 
 #page-navigation-side-bar p,
@@ -150,10 +154,7 @@ main > div > a > span > img {
 #page-navigation-section a {
   display: block;
   cursor: pointer;
-}
-
-#page-navigation-side-bar {
-  color: #545454;
+  font-family: "Montserrat", Verdana, Geneva, sans-serif;
 }
 
 #page-navigation-section {

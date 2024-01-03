@@ -1,11 +1,4 @@
-const getStartedButtons = document.querySelectorAll(".get-started-button");
 const modulesContainer = document.querySelector("#module-cards-container");
-
-getStartedButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    window.location.href = `pages.html?pageNumber=1`;
-  });
-});
 
 const bonusBriefs = [
   {
